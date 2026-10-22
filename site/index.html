@@ -50,8 +50,8 @@
     p { margin: 0; text-wrap: pretty; }
     .wrap { width: min(1200px, 100% - 2rem); margin-inline: auto; }
 
-    header.top { position: sticky; top: 0; z-index: 10; padding: 0.55rem 0; border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--paper) 88%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
-    section, #start, #status { scroll-margin-top: 4.5rem; }
+    header.top { position: sticky; top: 0; z-index: 10; padding: 0.4rem 0; border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--paper) 88%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+    section, #start, #status { scroll-margin-top: 5.5rem; }
     .totop { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 10; width: 3rem; height: 3rem; border-radius: 50%; border: 1.5px solid var(--rule); background: var(--surface); color: var(--ink); cursor: pointer; display: grid; place-items: center; box-shadow: 0 8px 24px -10px rgba(8, 22, 28, 0.45); opacity: 0; transform: translateY(0.75rem); pointer-events: none; transition: opacity 0.2s, transform 0.2s; }
     .totop.show { opacity: 1; transform: none; pointer-events: auto; }
     .totop:hover { border-color: var(--ink); }
@@ -59,8 +59,10 @@
     .totop svg { width: 1.25rem; height: 1.25rem; }
     @media (prefers-reduced-motion: reduce) { .totop { transition: none; } }
     header.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-        .brand { display: inline-flex; align-items: center; gap: 0.7rem; font-family: var(--font-display); font-weight: 650; font-size: 1.4rem; color: var(--ink); text-decoration: none; }
-    .brand svg { width: 2.9rem; height: 2.9rem; border-radius: 0.8rem; box-shadow: 0 0 0 1px rgba(85, 199, 173, 0.28), 0 6px 16px -8px rgba(8, 22, 28, 0.6); }
+        .brand { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-weight: 650; font-size: 1.5rem; color: var(--ink); text-decoration: none; }
+    .brand svg { width: 3.6rem; height: 3.6rem; flex: none; }
+    .lg-d { display: none; }
+    @media (prefers-color-scheme: dark) { .lg-l { display: none; } .lg-d { display: inline; } }
     nav a { margin-left: 1.4rem; color: var(--ink-2); text-decoration: none; font-size: 0.95rem; }
     .brand { white-space: nowrap; }
     @media (max-width: 640px) { header.top nav a:not(:last-child) { display: none; } header.top nav a { margin-left: 0; } }
@@ -127,30 +129,102 @@
     footer { border-top: 1px solid var(--rule); padding: 2.5rem 0 3.5rem; color: var(--ink-2); font-size: 0.95rem; }
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; }
     footer nav a { margin: 0 0 0 1.2rem; }
+  
+    /* ---- conventional layout ---- */
+    .hero-c { text-align: center; padding: clamp(2rem, 5vw, 4rem) 0 0; }
+    .pill { display: inline-block; padding: 0.35rem 0.9rem; border: 1px solid var(--rule); border-radius: 999px; background: var(--surface); color: var(--ink-2); font-size: 0.9rem; font-weight: 500; }
+    .pill b { color: var(--calm); font-weight: 600; }
+    .hero-c h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem); font-weight: 650; max-width: 18ch; margin: 1.2rem auto 0; }
+    .hero-c p.sub { margin: 1.2rem auto 0; max-width: 56ch; text-align: center; }
+    .hero-c .cta { justify-content: center; }
+    .trust { margin-top: 1.1rem; color: var(--ink-3); font-size: 0.92rem; }
+    .stage { position: relative; margin: clamp(2rem, 4vw, 3rem) auto 0; max-width: 1020px; }
+    .stage::before { content: ""; position: absolute; inset: 8% 6% -4%; background: radial-gradient(60% 60% at 50% 50%, color-mix(in srgb, var(--calm) 30%, transparent), transparent 70%); filter: blur(30px); z-index: 0; }
+    .stage .frame { position: relative; z-index: 1; text-align: left; }
+    .strip { padding: 2rem 0; border-top: 1px solid var(--rule); margin-top: clamp(2rem, 4vw, 3rem); text-align: center; color: var(--ink-3); font-size: 0.95rem; }
+    .strip ul { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; list-style: none; margin: 0.9rem 0 0; padding: 0; }
+    .strip li { padding: 0.45rem 1.1rem; border: 1px solid var(--rule); border-radius: 999px; background: var(--surface); color: var(--ink); font-weight: 600; }
+    .strip li.dim { font-weight: 400; color: var(--ink-2); border-style: dashed; background: transparent; }
+    .center { text-align: center; }
+    .center .principles, .center pre, .center ul.honest { text-align: left; }
+    .center ul.honest { margin-inline: auto; }
+    .center pre { max-width: 760px; margin-inline: auto; }
+    .center h2, .center .lede { margin-inline: auto; }
+    .cards { display: grid; gap: 1.25rem; margin-top: 2rem; }
+    @media (min-width: 860px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+    .card { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+    .card .thumb { background: #14262d; border-bottom: 1px solid var(--rule); aspect-ratio: 16 / 9; overflow: hidden; }
+    .card .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+    .card .body { padding: 1.25rem 1.3rem 1.5rem; text-align: left; }
+    .card .ico { width: 2.4rem; height: 2.4rem; border-radius: 10px; display: grid; place-items: center; background: color-mix(in srgb, var(--calm) 14%, transparent); color: var(--calm); margin-bottom: 0.9rem; }
+    .card .ico svg { width: 1.3rem; height: 1.3rem; }
+    .card h3 { font-size: 1.25rem; font-weight: 650; }
+    .card p { margin-top: 0.5rem; color: var(--ink-2); font-size: 1rem; }
+    .steps { display: grid; gap: 1.5rem; margin-top: 2rem; counter-reset: s; }
+    @media (min-width: 820px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step { position: relative; padding-top: 3.1rem; }
+    .step::before { counter-increment: s; content: counter(s); position: absolute; top: 0; left: 0; width: 2.3rem; height: 2.3rem; border-radius: 50%; display: grid; place-items: center; background: var(--btn-bg); color: var(--btn-ink); font: 650 1.05rem var(--font-display); }
+    .step h3 { font-size: 1.2rem; font-weight: 650; }
+    .step p { margin-top: 0.4rem; color: var(--ink-2); }
+    .band { margin: 0; padding: clamp(2.5rem, 5vw, 4rem) 0; border-top: 1px solid var(--rule); }
+    .band .box { background: #0d1a1f; color: #e4eeec; border-radius: 18px; padding: clamp(2rem, 5vw, 3.5rem) 1.5rem; text-align: center; border: 1px solid #26414a; }
+    .band h2 { max-width: 22ch; margin: 0 auto; color: #e4eeec; }
+    .band p { margin: 0.8rem auto 0; color: #a3b6ba; max-width: 52ch; text-align: center; }
+    .band .btn { border-color: #e4eeec; color: #e4eeec; }
+    .band .btn.primary { background: #e4eeec; color: #0d1a1f; }
   </style>
 </head>
 <body>
   <header class="top">
     <div class="wrap">
       <a class="brand" href="/" aria-label="PGM Lens home">
-        <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="72" height="72" rx="17" fill="#0d1a1f"/><g transform="translate(5.5 4.5) scale(.92)">
+        <svg class="lg-l" viewBox="3 3 58 58" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 <defs>
- <linearGradient id="hrim" x1="0.1" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#8ee6cf"/><stop offset=".5" stop-color="#55c7ad"/><stop offset="1" stop-color="#2b8f7b"/></linearGradient>
- <linearGradient id="hhan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe066"/><stop offset=".55" stop-color="#f6bd0c"/><stop offset="1" stop-color="#d28f00"/></linearGradient>
- <linearGradient id="hfer" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ee6cf"/><stop offset="1" stop-color="#2b8f7b"/></linearGradient>
- <radialGradient id="hgl" cx=".33" cy=".28" r=".95"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".55" stop-color="#dff3f6" stop-opacity=".12"/><stop offset="1" stop-color="#9fd3dc" stop-opacity=".1"/></radialGradient>
- <linearGradient id="hgs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
- <filter id="hsh" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx=".7" dy="1.4" stdDeviation="1.1" flood-color="#000" flood-opacity=".5"/></filter>
+ <linearGradient id="hlrim" x1="0.1" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#37a592"/><stop offset=".5" stop-color="#1b7466"/><stop offset="1" stop-color="#0d4a40"/></linearGradient>
+ <linearGradient id="hlhan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe066"/><stop offset=".55" stop-color="#f6bd0c"/><stop offset="1" stop-color="#d28f00"/></linearGradient>
+ <linearGradient id="hlfer" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#37a592"/><stop offset="1" stop-color="#0d4a40"/></linearGradient>
+ <radialGradient id="hlgl" cx=".33" cy=".28" r=".95"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset=".55" stop-color="#dff3f6" stop-opacity=".38"/><stop offset="1" stop-color="#9fd3dc" stop-opacity=".22"/></radialGradient>
+ <linearGradient id="hlgs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <filter id="hlsh" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx=".7" dy="1.4" stdDeviation="1.1" flood-color="#000" flood-opacity=".28"/></filter>
 </defs>
-<g filter="url(#hsh)">
- <path d="M46.2 43.8L59.77 56.23A2.5 2.5 0 0 1 56.23 59.77L43.8 46.2Z" fill="url(#hhan)"/>
+<g filter="url(#hlsh)">
+ <path d="M46.2 43.8L59.77 56.23A2.5 2.5 0 0 1 56.23 59.77L43.8 46.2Z" fill="url(#hlhan)"/>
  <path d="M47 44.6L58.6 56" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/>
- <path d="M39.6 39.6L41.4 41.4" stroke="url(#hfer)" stroke-width="3.2"/>
- <path d="M40.8 40.8L45.6 45.6" stroke="url(#hfer)" stroke-width="5.4"/>
+ <path d="M39.6 39.6L41.4 41.4" stroke="url(#hlfer)" stroke-width="3.2"/>
+ <path d="M40.8 40.8L45.6 45.6" stroke="url(#hlfer)" stroke-width="5.4"/>
  <path d="M44.04 40.36L40.36 44.04M45.64 41.96L41.96 45.64" stroke="#fff" stroke-opacity=".4" stroke-width=".55"/>
- <circle cx="26" cy="26" r="19.9" fill="none" stroke="url(#hrim)" stroke-width="2.8"/>
+ <circle cx="26" cy="26" r="19.9" fill="none" stroke="url(#hlrim)" stroke-width="2.8"/>
 </g>
-<circle cx="26" cy="26" r="18.5" fill="url(#hgl)"/>
+<circle cx="26" cy="26" r="18.5" fill="url(#hlgl)"/>
+<circle cx="26" cy="26" r="18.4" fill="none" stroke="#0d4a40" stroke-opacity=".35" stroke-width="1"/>
+<circle cx="26" cy="26" r="17.3" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width=".6"/>
+<g>
+ <path d="M19.4 18.4h13.2M19.4 33.6h13.2" stroke="#0f5247" stroke-width="2" stroke-linecap="round"/>
+ <path d="M20.8 18.6c0 4.8 5.2 5.6 5.2 7.4s-5.2 2.6-5.2 7.4M31.2 18.6c0 4.8-5.2 5.6-5.2 7.4s5.2 2.6 5.2 7.4" fill="none" stroke="#0f5247" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M22.4 33.4c.3-2.4 2.2-3.7 3.6-3.7s3.3 1.3 3.6 3.7z" fill="#0f5247"/>
+ <path d="M26 24.8v3.2" stroke="#0f5247" stroke-width=".9" stroke-linecap="round"/>
+</g>
+<path d="M12.2 21.4A14.6 14.6 0 0 1 19 12" fill="none" stroke="url(#hlgs)" stroke-width="3" stroke-linecap="round"/>
+<path d="M37.6 36.6A14.6 14.6 0 0 0 39.8 30.6" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+        <svg class="lg-d" viewBox="3 3 58 58" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs>
+ <linearGradient id="hdrim" x1="0.1" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#8ee6cf"/><stop offset=".5" stop-color="#55c7ad"/><stop offset="1" stop-color="#2b8f7b"/></linearGradient>
+ <linearGradient id="hdhan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe066"/><stop offset=".55" stop-color="#f6bd0c"/><stop offset="1" stop-color="#d28f00"/></linearGradient>
+ <linearGradient id="hdfer" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ee6cf"/><stop offset="1" stop-color="#2b8f7b"/></linearGradient>
+ <radialGradient id="hdgl" cx=".33" cy=".28" r=".95"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".55" stop-color="#dff3f6" stop-opacity=".12"/><stop offset="1" stop-color="#9fd3dc" stop-opacity=".1"/></radialGradient>
+ <linearGradient id="hdgs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <filter id="hdsh" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx=".7" dy="1.4" stdDeviation="1.1" flood-color="#000" flood-opacity=".5"/></filter>
+</defs>
+<g filter="url(#hdsh)">
+ <path d="M46.2 43.8L59.77 56.23A2.5 2.5 0 0 1 56.23 59.77L43.8 46.2Z" fill="url(#hdhan)"/>
+ <path d="M47 44.6L58.6 56" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/>
+ <path d="M39.6 39.6L41.4 41.4" stroke="url(#hdfer)" stroke-width="3.2"/>
+ <path d="M40.8 40.8L45.6 45.6" stroke="url(#hdfer)" stroke-width="5.4"/>
+ <path d="M44.04 40.36L40.36 44.04M45.64 41.96L41.96 45.64" stroke="#fff" stroke-opacity=".4" stroke-width=".55"/>
+ <circle cx="26" cy="26" r="19.9" fill="none" stroke="url(#hdrim)" stroke-width="2.8"/>
+</g>
+<circle cx="26" cy="26" r="18.5" fill="url(#hdgl)"/>
 <circle cx="26" cy="26" r="18.4" fill="none" stroke="#8ee6cf" stroke-opacity=".35" stroke-width="1"/>
 <circle cx="26" cy="26" r="17.3" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width=".6"/>
 <g>
@@ -159,13 +233,14 @@
  <path d="M22.4 33.4c.3-2.4 2.2-3.7 3.6-3.7s3.3 1.3 3.6 3.7z" fill="#7fe0c6"/>
  <path d="M26 24.8v3.2" stroke="#7fe0c6" stroke-width=".9" stroke-linecap="round"/>
 </g>
-<path d="M12.2 21.4A14.6 14.6 0 0 1 19 12" fill="none" stroke="url(#hgs)" stroke-width="3" stroke-linecap="round"/>
+<path d="M12.2 21.4A14.6 14.6 0 0 1 19 12" fill="none" stroke="url(#hdgs)" stroke-width="3" stroke-linecap="round"/>
 <path d="M37.6 36.6A14.6 14.6 0 0 0 39.8 30.6" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
-</g></svg>
+</svg>
         PGM Lens
       </a>
       <nav aria-label="Primary">
-        <a href="#questions">What it does</a>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
         <a href="#start">Get started</a>
         <a href="#status">Status</a>
         <a href="https://github.com/vimalmaheedharan/pgmlens">GitHub</a>
@@ -174,122 +249,72 @@
   </header>
 
   <main>
-    <div class="wrap hero">
-      <div class="hero-text">
-      <p class="eyebrow">Open-source program intelligence</p>
+    <div class="wrap hero-c">
+      <span class="pill"><b>New</b> · Open source, Apache-2.0</span>
       <h1>Know when your program will really finish.</h1>
       <p class="sub">PGM Lens reads Jira, GitLab and GitHub, finds the work that is holding everything else up, and forecasts the finish date as honest probabilities instead of one hopeful date.</p>
       <div class="cta">
-        <a class="btn primary" href="https://github.com/vimalmaheedharan/pgmlens">View on GitHub</a>
+        <a class="btn primary" href="https://github.com/vimalmaheedharan/pgmlens">Get it on GitHub</a>
         <a class="btn" href="#start">Try the demo in a minute</a>
       </div>
-      </div>
-      <div class="hero-visual">
-        <figure>
+      <p class="trust">Free and self-hosted. No sign-up, no tracking.</p>
+      <div class="stage">
         <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
-          <picture>
-            <img src="img/hero-dark.webp" width="1132" height="613" alt="The PGM Lens overview for a demo program: the verdict 'Off track', then a forecast timeline for three milestones, each with a bar from the most likely finish to the date we are 80% sure of, a due-date flag and a plain verdict such as 'Likely to slip about 2 weeks'." />
-          </picture>
+          <img src="img/hero-dark.webp" width="1132" height="613" alt="The PGM Lens overview for a demo program: the verdict 'Off track', then a forecast timeline for three milestones, each with a plain verdict such as 'Likely to slip about 2 weeks'." />
         </div>
-      </figure>
-        <figure class="second">
-          <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
-            <picture>
-              <img src="img/attention-dark.webp" width="1132" height="479" alt="The risk list: each risk has a severity, a plain title, a one-sentence explanation and the issue keys involved." />
-            </picture>
-          </div>
-        </figure>
-        <p class="cap">Screens from the built-in demo program.</p>
       </div>
     </div>
 
-    <section aria-labelledby="questions">
-      <div class="wrap">
-        <h2 id="questions">Three questions, answered first.</h2>
-        <p class="lede">Every screen opens with the answer in plain language. The detail is one click away, not in the way.</p>
+    <div class="wrap strip">
+      Connects to the tools your teams already use
+      <ul aria-label="Supported connectors"><li>Jira</li><li>GitLab</li><li>GitHub</li><li class="dim">Write your own connector</li></ul>
+    </div>
 
-        <div class="answer">
-          <div class="text">
-            <h3>When will it finish?</h3>
-            <p>PGM Lens runs thousands of simulations on your team's recent pace and scope growth. You see a likely date, a date you can be 80% sure of, and the chance of hitting the deadline. A status is always a word and a shape, never just a colour.</p>
-          </div>
-          <figure>
-            <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
-              <picture>
-                <img src="img/numbers-dark.webp" loading="lazy" width="1132" height="546" alt="The same timeline with the numbers behind each forecast switched on: the chance of finishing on time and the dates at 50%, 80% and 95% confidence." />
-              </picture>
-            </div>
-          </figure>
+    <section id="features" aria-labelledby="features-h">
+      <div class="wrap center">
+        <h2 id="features-h">Three questions, answered first.</h2>
+        <p class="lede">Every screen opens with the answer in plain language. The detail is one click away.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="thumb"><img src="img/numbers-dark.webp" loading="lazy" width="1132" height="546" alt="Forecast timeline with the numbers behind each forecast." /></div>
+            <div class="body"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>When will it finish?</h3><p>Thousands of simulations on your team's recent pace give a likely date, an 80% date and the chance of making the deadline.</p></div>
+          </article>
+          <article class="card">
+            <div class="thumb"><img src="img/attention-dark.webp" loading="lazy" width="1132" height="479" alt="A list of risks with severity and explanation." /></div>
+            <div class="body"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9.5 16.5h-19z"/><path d="M12 10v4M12 17.2v.1"/></svg></div><h3>What needs attention?</h3><p>Rules flag stale blockers, scope creep, overloaded owners and unowned critical work, each with what to do next.</p></div>
+          </article>
+          <article class="card">
+            <div class="thumb"><img src="img/deps-dark.webp" loading="lazy" width="1070" height="270" alt="A dependency map of issues with the critical path outlined." /></div>
+            <div class="body"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="12" r="2.2"/><path d="M7 6.5l10 4.6M7 17.5l10-4.6"/></svg></div><h3>What is holding everything up?</h3><p>A dependency map built from your real blocking links surfaces the one issue at the root of a chain.</p></div>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <div class="answer flip">
-          <div class="text">
-            <h3>What needs attention?</h3>
-            <p>Declarative rules flag stale blockers, scope creep, overloaded owners, critical work nobody owns and long dependency chains. Each finding says what is wrong, why it matters and what to do next.</p>
-          </div>
-          <figure>
-            <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
-              <picture>
-                <img src="img/attention-dark.webp" loading="lazy" width="1132" height="479" alt="A list of risks, each with a severity, a title, a one-sentence explanation and the issue keys involved." />
-              </picture>
-            </div>
-          </figure>
-        </div>
-
-        <div class="answer">
-          <div class="text">
-            <h3>What is holding everything up?</h3>
-            <p>A dependency map built from your real blocking links, with the critical path outlined. It surfaces the single issue at the root of a chain, so you fix that one first.</p>
-          </div>
-          <figure>
-            <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
-              <picture>
-                <img src="img/deps-dark.webp" loading="lazy" width="1070" height="270" alt="A dependency map of issues connected by blocking links, with the critical path outlined." />
-              </picture>
-            </div>
-          </figure>
+    <section id="how" aria-labelledby="how-h">
+      <div class="wrap center">
+        <h2 id="how-h">How it works</h2>
+        <div class="steps" style="text-align:left">
+          <div class="step"><h3>Connect</h3><p>Point a connector at Jira, GitLab or GitHub. Everything is normalised into one model, so a program across several trackers reads as one.</p></div>
+          <div class="step"><h3>Analyse</h3><p>Graph analysis, a Monte Carlo forecast and declarative risk rules run on your data. Thresholds live in a YAML file you can edit.</p></div>
+          <div class="step"><h3>Act</h3><p>Read the verdict, open the risk, and brief leadership. AI summaries may only quote facts, and anything ungrounded is rejected.</p></div>
         </div>
       </div>
     </section>
 
     <section aria-labelledby="trust">
-      <div class="wrap">
+      <div class="wrap center">
         <h2 id="trust">Built so you can check the maths.</h2>
         <div class="principles">
-          <div>
-            <span class="mark"></span>
-            <h3>Uncertainty is shown</h3>
-            <p>Forecasts are probability bands, not a single date. Tick one box and the numbers behind every forecast appear.</p>
-          </div>
-          <div>
-            <span class="mark"></span>
-            <h3>AI explains, it does not invent</h3>
-            <p>Executive briefings are written from numbered facts. A claim that cites no fact, or contains a number or issue key that is not in the facts it cites, is rejected and a plain briefing is used instead.</p>
-          </div>
-          <div>
-            <span class="mark"></span>
-            <h3>Rules are data</h3>
-            <p>Risk thresholds live in a YAML file you can extend. Change what "stale" means for your team without touching code.</p>
-          </div>
+          <div><span class="mark"></span><h3>Uncertainty is shown</h3><p>Forecasts are probability bands, not a single date. Tick one box and the numbers behind every forecast appear.</p></div>
+          <div><span class="mark"></span><h3>AI explains, it does not invent</h3><p>Briefings are written from numbered facts. A claim that cites no fact, or contains a number that is not in the facts it cites, is rejected.</p></div>
+          <div><span class="mark"></span><h3>Rules are data</h3><p>Risk thresholds live in a YAML file you can extend, so "stale" means what it means for your team.</p></div>
         </div>
       </div>
     </section>
 
-    <section aria-labelledby="tools">
-      <div class="wrap">
-        <h2 id="tools">Works with the tools your teams already use.</h2>
-        <p class="lede">Connectors turn each system into one normalized model, so a program that spans several trackers still reads as one.</p>
-        <ul class="tools" aria-label="Supported connectors">
-          <li>Jira</li>
-          <li>GitLab</li>
-          <li>GitHub</li>
-          <li class="dim">Write your own connector</li>
-        </ul>
-      </div>
-    </section>
-
     <section id="start" aria-labelledby="start-h">
-      <div class="wrap">
+      <div class="wrap center">
         <h2 id="start-h">Try it in a minute.</h2>
         <p class="lede">The demo ships with a realistic program that is deliberately behind schedule. You need <a href="https://docs.astral.sh/uv/">uv</a> and Node 20 or newer, or Docker.</p>
 <pre><code><span class="c"># from source (works on Windows, macOS and Linux)</span>
@@ -306,7 +331,7 @@ docker compose up   <span class="c"># http://localhost:8080</span></code></pre>
     </section>
 
     <section id="status" aria-labelledby="status-h">
-      <div class="wrap">
+      <div class="wrap center">
         <h2 id="status-h">Early, and honest about it.</h2>
         <p class="lede">PGM Lens is version 0.1. It is a solid core, not a finished product. Before you rely on it:</p>
         <ul class="honest">
@@ -315,12 +340,17 @@ docker compose up   <span class="c"># http://localhost:8080</span></code></pre>
           <li><strong>The API does not sync from Jira or GitLab by itself.</strong> That is deliberate, because a server that fetches arbitrary URLs is a security risk. Run a connector from the command line or your own job and send the result in.</li>
           <li><strong>Sign-in is a single token</strong> protecting write actions. Proper authentication is planned.</li>
         </ul>
-        <div class="cta">
-          <a class="btn primary" href="https://github.com/vimalmaheedharan/pgmlens/blob/main/ROADMAP.md">Read the roadmap</a>
-          <a class="btn" href="https://github.com/vimalmaheedharan/pgmlens/blob/main/CONTRIBUTING.md">Contribute</a>
-        </div>
       </div>
     </section>
+
+    <div class="band"><div class="wrap"><div class="box">
+      <h2>See it on your own program.</h2>
+      <p>Free, open source and yours to self-host. Star the repo to follow along, or read the roadmap to see what is next.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/vimalmaheedharan/pgmlens">Get it on GitHub</a>
+        <a class="btn" href="https://github.com/vimalmaheedharan/pgmlens/blob/main/ROADMAP.md">Read the roadmap</a>
+      </div>
+    </div></div></div>
   </main>
 
   <footer>
