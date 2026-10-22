@@ -66,12 +66,12 @@
     @media (max-width: 640px) { header.top nav a:not(:last-child) { display: none; } header.top nav a { margin-left: 0; } }
     nav a:hover { color: var(--ink); text-decoration: underline; }
 
-    .hero { padding: clamp(1.5rem, 4vw, 3.5rem) 0 clamp(2.5rem, 5vw, 4rem); display: grid; gap: 2.5rem; align-items: start; }
+    .hero { padding: clamp(1.25rem, 3vw, 2.5rem) 0 clamp(1.75rem, 3.5vw, 2.75rem); display: grid; gap: 2rem; align-items: start; }
     .hero-text { padding-top: clamp(0rem, 2vw, 2rem); }
     .eyebrow { color: var(--calm); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; margin-bottom: 1rem; }
     .hero h1 { font-size: clamp(2.4rem, 6.4vw, 4.4rem); font-weight: 650; max-width: 16ch; }
     .hero p.sub { margin-top: 1.4rem; max-width: 52ch; font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--ink-2); }
-    .cta { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+    .cta { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
     .btn { display: inline-block; padding: 0.8rem 1.3rem; border-radius: 8px; font-weight: 600; text-decoration: none; border: 1.5px solid var(--ink); color: var(--ink); }
     .btn.primary { background: var(--btn-bg); color: var(--btn-ink); border-color: var(--btn-bg); }
     .btn:hover { filter: brightness(1.12); }
@@ -92,34 +92,34 @@
       .hero-visual .second { display: block; position: relative; z-index: 1; width: 84%; margin: -2.75rem 0 0 16%; }
     }
 
-    section { padding: clamp(3rem, 7vw, 5.5rem) 0; border-top: 1px solid var(--rule); }
+    section { padding: clamp(2.25rem, 4.5vw, 3.5rem) 0; border-top: 1px solid var(--rule); }
     section h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 650; max-width: 20ch; }
-    .lede { margin-top: 1rem; max-width: 56ch; color: var(--ink-2); }
+    .lede { margin-top: 0.75rem; max-width: 56ch; color: var(--ink-2); }
 
-    .answer { display: grid; gap: 2rem 3rem; margin-top: 2.5rem; align-items: center; }
+    .answer { display: grid; gap: 1.25rem 3rem; margin-top: 1.5rem; align-items: center; }
     @media (min-width: 880px) {
       .answer { grid-template-columns: 5fr 7fr; }
       .answer.flip { grid-template-columns: 7fr 5fr; }
       .answer.flip .text { order: 2; }
     }
-    .answer + .answer { margin-top: 4rem; }
+    .answer + .answer { margin-top: 2.5rem; }
     .answer h3 { font-size: 1.6rem; font-weight: 650; }
     .answer .text p { margin-top: 0.8rem; color: var(--ink-2); }
 
-    .principles { display: grid; gap: 2rem; margin-top: 2.5rem; }
+    .principles { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
     @media (min-width: 820px) { .principles { grid-template-columns: repeat(3, 1fr); } }
     .principles h3 { font-size: 1.25rem; font-weight: 650; margin-bottom: 0.5rem; }
     .principles p { color: var(--ink-2); font-size: 1rem; }
     .principles .mark { display: block; width: 2.2rem; height: 0.28rem; background: var(--calm); border-radius: 2px; margin-bottom: 1rem; }
 
-    .tools { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2rem; padding: 0; list-style: none; }
+    .tools { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.25rem; padding: 0; list-style: none; }
     .tools li { padding: 0.5rem 1rem; border: 1px solid var(--rule); border-radius: 999px; background: var(--surface); font-weight: 600; }
     .tools li.dim { font-weight: 400; color: var(--ink-2); border-style: dashed; background: transparent; }
 
-    pre { background: var(--code-bg); color: var(--code-ink); padding: 1.2rem 1.4rem; border-radius: 10px; overflow-x: auto; font: 0.95rem/1.7 ui-monospace, "SFMono-Regular", Consolas, monospace; margin: 2rem 0 0; }
+    pre { background: var(--code-bg); color: var(--code-ink); padding: 1.2rem 1.4rem; border-radius: 10px; overflow-x: auto; font: 0.95rem/1.7 ui-monospace, "SFMono-Regular", Consolas, monospace; margin: 1.5rem 0 0; }
     pre .c { color: #8ca7ad; }
 
-    ul.honest { margin: 2rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.9rem; max-width: 62ch; }
+    ul.honest { margin: 1.25rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.9rem; max-width: 62ch; }
     ul.honest li { padding-left: 1.6rem; position: relative; color: var(--ink-2); }
     ul.honest li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 0.7rem; height: 2px; background: var(--ink-3); }
     ul.honest strong { color: var(--ink); font-weight: 600; }
