@@ -9,9 +9,15 @@
   <meta property="og:description" content="Open-source program intelligence: risks, dependencies and probabilistic forecasts from the tools your teams already use." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pgmlens.com/" />
+  <meta property="og:image" content="https://pgmlens.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="PGM Lens: know when your program will really finish. A dark dashboard screenshot with a forecast timeline." />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#f2f4f1" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0d1a1f" media="(prefers-color-scheme: dark)" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%231b7466' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%231b7466'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preload" href="fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
   <style>
     @font-face { font-family: "Bricolage"; src: url("fonts/bricolage-grotesque-latin-wght-normal.woff2") format("woff2"); font-weight: 200 800; font-display: swap; }
@@ -44,7 +50,7 @@
     p { margin: 0; text-wrap: pretty; }
     .wrap { width: min(1200px, 100% - 2rem); margin-inline: auto; }
 
-    header.top { position: sticky; top: 0; z-index: 10; padding: 0.8rem 0; border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--paper) 88%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+    header.top { position: sticky; top: 0; z-index: 10; padding: 0.55rem 0; border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--paper) 88%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
     section, #start, #status { scroll-margin-top: 4.5rem; }
     .totop { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 10; width: 3rem; height: 3rem; border-radius: 50%; border: 1.5px solid var(--rule); background: var(--surface); color: var(--ink); cursor: pointer; display: grid; place-items: center; box-shadow: 0 8px 24px -10px rgba(8, 22, 28, 0.45); opacity: 0; transform: translateY(0.75rem); pointer-events: none; transition: opacity 0.2s, transform 0.2s; }
     .totop.show { opacity: 1; transform: none; pointer-events: auto; }
@@ -53,8 +59,8 @@
     .totop svg { width: 1.25rem; height: 1.25rem; }
     @media (prefers-reduced-motion: reduce) { .totop { transition: none; } }
     header.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .brand { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--font-display); font-weight: 650; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
-    .brand svg { width: 1.5rem; height: 1.5rem; }
+        .brand { display: inline-flex; align-items: center; gap: 0.7rem; font-family: var(--font-display); font-weight: 650; font-size: 1.4rem; color: var(--ink); text-decoration: none; }
+    .brand svg { width: 2.9rem; height: 2.9rem; border-radius: 0.8rem; box-shadow: 0 0 0 1px rgba(85, 199, 173, 0.28), 0 6px 16px -8px rgba(8, 22, 28, 0.6); }
     nav a { margin-left: 1.4rem; color: var(--ink-2); text-decoration: none; font-size: 0.95rem; }
     .brand { white-space: nowrap; }
     @media (max-width: 640px) { header.top nav a:not(:last-child) { display: none; } header.top nav a { margin-left: 0; } }
@@ -71,10 +77,10 @@
     .btn:hover { filter: brightness(1.12); }
 
     figure { margin: 0; }
-    .frame { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; box-shadow: 0 18px 40px -24px rgba(8, 22, 28, 0.35); }
-    .frame .bar { display: flex; align-items: center; gap: 0.4rem; padding: 0.55rem 0.8rem; background: var(--surface); border-bottom: 1px solid var(--rule); }
-    .frame .bar i { width: 0.65rem; height: 0.65rem; border-radius: 50%; background: var(--rule); }
-    .frame .bar span { flex: 1; max-width: 22rem; margin-left: 0.6rem; padding: 0.15rem 0.8rem; border-radius: 999px; background: var(--paper); color: var(--ink-3); font-size: 0.8rem; line-height: 1.5; }
+    .frame { background: #14262d; border: 1px solid #26414a; border-radius: 12px; overflow: hidden; box-shadow: 0 22px 44px -22px rgba(8, 22, 28, 0.55); }
+    .frame .bar { display: flex; align-items: center; gap: 0.4rem; padding: 0.55rem 0.8rem; background: #0d1a1f; border-bottom: 1px solid #26414a; }
+    .frame .bar i { width: 0.65rem; height: 0.65rem; border-radius: 50%; background: #3a5963; }
+    .frame .bar span { flex: 1; max-width: 22rem; margin-left: 0.6rem; padding: 0.15rem 0.8rem; border-radius: 999px; background: #14262d; color: #8ca7ad; font-size: 0.8rem; line-height: 1.5; }
     .frame img { display: block; width: 100%; height: auto; }
     figcaption { margin-top: 0.7rem; font-size: 0.9rem; color: var(--ink-3); }
     .hero-visual { min-width: 0; }
@@ -127,7 +133,35 @@
   <header class="top">
     <div class="wrap">
       <a class="brand" href="/" aria-label="PGM Lens home">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="var(--calm)" stroke-width="3"/><circle cx="16" cy="16" r="5" fill="var(--calm)"/></svg>
+        <svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="72" height="72" rx="17" fill="#0d1a1f"/><g transform="translate(5.5 4.5) scale(.92)">
+<defs>
+ <linearGradient id="hrim" x1="0.1" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#8ee6cf"/><stop offset=".5" stop-color="#55c7ad"/><stop offset="1" stop-color="#2b8f7b"/></linearGradient>
+ <linearGradient id="hhan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe066"/><stop offset=".55" stop-color="#f6bd0c"/><stop offset="1" stop-color="#d28f00"/></linearGradient>
+ <linearGradient id="hfer" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ee6cf"/><stop offset="1" stop-color="#2b8f7b"/></linearGradient>
+ <radialGradient id="hgl" cx=".33" cy=".28" r=".95"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".55" stop-color="#dff3f6" stop-opacity=".12"/><stop offset="1" stop-color="#9fd3dc" stop-opacity=".1"/></radialGradient>
+ <linearGradient id="hgs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+ <filter id="hsh" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx=".7" dy="1.4" stdDeviation="1.1" flood-color="#000" flood-opacity=".5"/></filter>
+</defs>
+<g filter="url(#hsh)">
+ <path d="M46.2 43.8L59.77 56.23A2.5 2.5 0 0 1 56.23 59.77L43.8 46.2Z" fill="url(#hhan)"/>
+ <path d="M47 44.6L58.6 56" stroke="#fff" stroke-opacity=".55" stroke-width=".8" stroke-linecap="round"/>
+ <path d="M39.6 39.6L41.4 41.4" stroke="url(#hfer)" stroke-width="3.2"/>
+ <path d="M40.8 40.8L45.6 45.6" stroke="url(#hfer)" stroke-width="5.4"/>
+ <path d="M44.04 40.36L40.36 44.04M45.64 41.96L41.96 45.64" stroke="#fff" stroke-opacity=".4" stroke-width=".55"/>
+ <circle cx="26" cy="26" r="19.9" fill="none" stroke="url(#hrim)" stroke-width="2.8"/>
+</g>
+<circle cx="26" cy="26" r="18.5" fill="url(#hgl)"/>
+<circle cx="26" cy="26" r="18.4" fill="none" stroke="#8ee6cf" stroke-opacity=".35" stroke-width="1"/>
+<circle cx="26" cy="26" r="17.3" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width=".6"/>
+<g>
+ <path d="M19.4 18.4h13.2M19.4 33.6h13.2" stroke="#7fe0c6" stroke-width="2" stroke-linecap="round"/>
+ <path d="M20.8 18.6c0 4.8 5.2 5.6 5.2 7.4s-5.2 2.6-5.2 7.4M31.2 18.6c0 4.8-5.2 5.6-5.2 7.4s5.2 2.6 5.2 7.4" fill="none" stroke="#7fe0c6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M22.4 33.4c.3-2.4 2.2-3.7 3.6-3.7s3.3 1.3 3.6 3.7z" fill="#7fe0c6"/>
+ <path d="M26 24.8v3.2" stroke="#7fe0c6" stroke-width=".9" stroke-linecap="round"/>
+</g>
+<path d="M12.2 21.4A14.6 14.6 0 0 1 19 12" fill="none" stroke="url(#hgs)" stroke-width="3" stroke-linecap="round"/>
+<path d="M37.6 36.6A14.6 14.6 0 0 0 39.8 30.6" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5" stroke-linecap="round"/>
+</g></svg>
         PGM Lens
       </a>
       <nav aria-label="Primary">
@@ -154,16 +188,14 @@
         <figure>
         <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
           <picture>
-            <source srcset="img/hero-dark.webp" media="(prefers-color-scheme: dark)" />
-            <img src="img/hero-light.webp" width="1132" height="613" alt="The PGM Lens overview for a demo program: the verdict 'Off track', then a forecast timeline for three milestones, each with a bar from the most likely finish to the date we are 80% sure of, a due-date flag and a plain verdict such as 'Likely to slip about 2 weeks'." />
+            <img src="img/hero-dark.webp" width="1132" height="613" alt="The PGM Lens overview for a demo program: the verdict 'Off track', then a forecast timeline for three milestones, each with a bar from the most likely finish to the date we are 80% sure of, a due-date flag and a plain verdict such as 'Likely to slip about 2 weeks'." />
           </picture>
         </div>
       </figure>
         <figure class="second">
           <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
             <picture>
-              <source srcset="img/attention-dark.webp" media="(prefers-color-scheme: dark)" />
-              <img src="img/attention-light.webp" width="1132" height="479" alt="The risk list: each risk has a severity, a plain title, a one-sentence explanation and the issue keys involved." />
+              <img src="img/attention-dark.webp" width="1132" height="479" alt="The risk list: each risk has a severity, a plain title, a one-sentence explanation and the issue keys involved." />
             </picture>
           </div>
         </figure>
@@ -184,8 +216,7 @@
           <figure>
             <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
               <picture>
-                <source srcset="img/numbers-dark.webp" media="(prefers-color-scheme: dark)" />
-                <img src="img/numbers-light.webp" loading="lazy" width="1132" height="546" alt="The same timeline with the numbers behind each forecast switched on: the chance of finishing on time and the dates at 50%, 80% and 95% confidence." />
+                <img src="img/numbers-dark.webp" loading="lazy" width="1132" height="546" alt="The same timeline with the numbers behind each forecast switched on: the chance of finishing on time and the dates at 50%, 80% and 95% confidence." />
               </picture>
             </div>
           </figure>
@@ -199,8 +230,7 @@
           <figure>
             <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
               <picture>
-                <source srcset="img/attention-dark.webp" media="(prefers-color-scheme: dark)" />
-                <img src="img/attention-light.webp" loading="lazy" width="1132" height="479" alt="A list of risks, each with a severity, a title, a one-sentence explanation and the issue keys involved." />
+                <img src="img/attention-dark.webp" loading="lazy" width="1132" height="479" alt="A list of risks, each with a severity, a title, a one-sentence explanation and the issue keys involved." />
               </picture>
             </div>
           </figure>
@@ -214,8 +244,7 @@
           <figure>
             <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
               <picture>
-                <source srcset="img/deps-dark.webp" media="(prefers-color-scheme: dark)" />
-                <img src="img/deps-light.webp" loading="lazy" width="1070" height="270" alt="A dependency map of issues connected by blocking links, with the critical path outlined." />
+                <img src="img/deps-dark.webp" loading="lazy" width="1070" height="270" alt="A dependency map of issues connected by blocking links, with the critical path outlined." />
               </picture>
             </div>
           </figure>
