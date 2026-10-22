@@ -6,3 +6,4 @@ apps/web/dist
 data
 .pytest_cache
 .ruff_cache
+site

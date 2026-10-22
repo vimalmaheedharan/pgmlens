@@ -4,3 +4,4 @@ nav:
   - Rules: rules.md
   - Connectors: connectors.md
 docs_dir: docs
+site_dir: docs/site

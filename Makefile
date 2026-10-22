@@ -1,4 +1,4 @@
-.PHONY: setup test lint fmt api web demo build up docs clean
+.PHONY: setup test lint fmt api web demo report build up docs clean
 
 setup:            ## install python + web dependencies
 	uv sync
@@ -22,7 +22,10 @@ api:              ## run the API with the built-in demo program on :8000
 web:              ## run the dashboard dev server on :5173 (proxies /api to :8000)
 	cd apps/web && npm run dev
 
-demo:             ## analyze the bundled demo dataset in the terminal
+demo: build       ## build the dashboard and serve it with the demo program on http://localhost:8000
+	uv run python -m pgmlens_api --web apps/web/dist
+
+report:           ## print the analysis of the bundled demo dataset in the terminal
 	uv run pgmlens analyze examples/demo-dataset.json
 
 build:            ## production build of the dashboard

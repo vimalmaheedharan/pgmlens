@@ -23,7 +23,6 @@ apps/web/dist/
 
 # Docs build
 docs/site/
-site/
 
 # OS / editors
 .DS_Store

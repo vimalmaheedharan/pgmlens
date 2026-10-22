@@ -28,7 +28,15 @@ flowchart LR
 
 ```bash
 make setup      # uv sync + npm install
-make demo       # build the dashboard and serve it with a demo program on :8000
+make demo       # builds the dashboard and serves it with a demo program on http://localhost:8000
+```
+
+No `make` (for example on Windows)? Run the same steps by hand:
+
+```bash
+uv sync
+cd apps/web && npm install && npm run build && cd ../..
+uv run python -m pgmlens_api --web apps/web/dist
 ```
 
 Or with Docker: `docker compose up` → http://localhost:8080
