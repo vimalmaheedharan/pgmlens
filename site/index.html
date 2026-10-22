@@ -60,7 +60,8 @@
     @media (max-width: 640px) { header.top nav a:not(:last-child) { display: none; } header.top nav a { margin-left: 0; } }
     nav a:hover { color: var(--ink); text-decoration: underline; }
 
-    .hero { padding: clamp(1.5rem, 4vw, 3.5rem) 0 clamp(2.5rem, 5vw, 4rem); display: grid; gap: 2.5rem; align-items: center; }
+    .hero { padding: clamp(1.5rem, 4vw, 3.5rem) 0 clamp(2.5rem, 5vw, 4rem); display: grid; gap: 2.5rem; align-items: start; }
+    .hero-text { padding-top: clamp(0rem, 2vw, 2rem); }
     .eyebrow { color: var(--calm); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; margin-bottom: 1rem; }
     .hero h1 { font-size: clamp(2.4rem, 6.4vw, 4.4rem); font-weight: 650; max-width: 16ch; }
     .hero p.sub { margin-top: 1.4rem; max-width: 52ch; font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--ink-2); }
@@ -154,7 +155,7 @@
         <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
           <picture>
             <source srcset="img/hero-dark.webp" media="(prefers-color-scheme: dark)" />
-            <img src="img/hero-light.webp" width="1088" height="569" alt="The PGM Lens overview for a demo program: the verdict 'Off track', then a forecast timeline for three milestones, each with a bar from the most likely finish to the date we are 80% sure of, a due-date flag and a plain verdict such as 'Likely to slip about 2 weeks'." />
+            <img src="img/hero-light.webp" width="1132" height="613" alt="The PGM Lens overview for a demo program: the verdict 'Off track', then a forecast timeline for three milestones, each with a bar from the most likely finish to the date we are 80% sure of, a due-date flag and a plain verdict such as 'Likely to slip about 2 weeks'." />
           </picture>
         </div>
       </figure>
@@ -162,7 +163,7 @@
           <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
             <picture>
               <source srcset="img/attention-dark.webp" media="(prefers-color-scheme: dark)" />
-              <img src="img/attention-light.webp" width="1072" height="420" alt="The risk list: each risk has a severity, a plain title, a one-sentence explanation and the issue keys involved." />
+              <img src="img/attention-light.webp" width="1132" height="479" alt="The risk list: each risk has a severity, a plain title, a one-sentence explanation and the issue keys involved." />
             </picture>
           </div>
         </figure>
@@ -184,7 +185,7 @@
             <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
               <picture>
                 <source srcset="img/numbers-dark.webp" media="(prefers-color-scheme: dark)" />
-                <img src="img/numbers-light.webp" loading="lazy" width="1072" height="488" alt="The same timeline with the numbers behind each forecast switched on: the chance of finishing on time and the dates at 50%, 80% and 95% confidence." />
+                <img src="img/numbers-light.webp" loading="lazy" width="1132" height="546" alt="The same timeline with the numbers behind each forecast switched on: the chance of finishing on time and the dates at 50%, 80% and 95% confidence." />
               </picture>
             </div>
           </figure>
@@ -199,7 +200,7 @@
             <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
               <picture>
                 <source srcset="img/attention-dark.webp" media="(prefers-color-scheme: dark)" />
-                <img src="img/attention-light.webp" loading="lazy" width="1072" height="420" alt="A list of risks, each with a severity, a title, a one-sentence explanation and the issue keys involved." />
+                <img src="img/attention-light.webp" loading="lazy" width="1132" height="479" alt="A list of risks, each with a severity, a title, a one-sentence explanation and the issue keys involved." />
               </picture>
             </div>
           </figure>
@@ -214,7 +215,7 @@
             <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
               <picture>
                 <source srcset="img/deps-dark.webp" media="(prefers-color-scheme: dark)" />
-                <img src="img/deps-light.webp" loading="lazy" width="1070" height="250" alt="A dependency map of issues connected by blocking links, with the critical path outlined." />
+                <img src="img/deps-light.webp" loading="lazy" width="1070" height="270" alt="A dependency map of issues connected by blocking links, with the critical path outlined." />
               </picture>
             </div>
           </figure>
