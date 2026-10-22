@@ -44,11 +44,20 @@
     p { margin: 0; text-wrap: pretty; }
     .wrap { width: min(1080px, 100% - 2rem); margin-inline: auto; }
 
-    header.top { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+    header.top { position: sticky; top: 0; z-index: 10; padding: 0.8rem 0; border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--paper) 88%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+    section, #start, #status { scroll-margin-top: 4.5rem; }
+    .totop { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 10; width: 3rem; height: 3rem; border-radius: 50%; border: 1.5px solid var(--rule); background: var(--surface); color: var(--ink); cursor: pointer; display: grid; place-items: center; box-shadow: 0 8px 24px -10px rgba(8, 22, 28, 0.45); opacity: 0; transform: translateY(0.75rem); pointer-events: none; transition: opacity 0.2s, transform 0.2s; }
+    .totop.show { opacity: 1; transform: none; pointer-events: auto; }
+    .totop:hover { border-color: var(--ink); }
+    .totop:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; }
+    .totop svg { width: 1.25rem; height: 1.25rem; }
+    @media (prefers-reduced-motion: reduce) { .totop { transition: none; } }
     header.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
     .brand { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--font-display); font-weight: 650; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
     .brand svg { width: 1.5rem; height: 1.5rem; }
     nav a { margin-left: 1.4rem; color: var(--ink-2); text-decoration: none; font-size: 0.95rem; }
+    .brand { white-space: nowrap; }
+    @media (max-width: 640px) { header.top nav a:not(:last-child) { display: none; } header.top nav a { margin-left: 0; } }
     nav a:hover { color: var(--ink); text-decoration: underline; }
 
     .hero { padding: clamp(3rem, 8vw, 6rem) 0 2.5rem; }
@@ -114,6 +123,7 @@
         PGM Lens
       </a>
       <nav aria-label="Primary">
+        <a href="#questions">What it does</a>
         <a href="#start">Get started</a>
         <a href="#status">Status</a>
         <a href="https://github.com/vimalmaheedharan/pgmlens">GitHub</a>
@@ -274,5 +284,20 @@ docker compose up   <span class="c"># http://localhost:8080</span></code></pre>
       </nav>
     </div>
   </footer>
+  <button class="totop" type="button" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+  <script>
+    (function () {
+      var btn = document.querySelector(".totop");
+      function update() { btn.classList.toggle("show", window.scrollY > 700); }
+      window.addEventListener("scroll", update, { passive: true });
+      btn.addEventListener("click", function () {
+        var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({ top: 0, behavior: calm ? "auto" : "smooth" });
+      });
+      update();
+    })();
+  </script>
 </body>
 </html>
