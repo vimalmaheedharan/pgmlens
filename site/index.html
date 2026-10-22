@@ -42,7 +42,7 @@
     a:focus-visible, .btn:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; border-radius: 4px; }
     h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; margin: 0; text-wrap: balance; }
     p { margin: 0; text-wrap: pretty; }
-    .wrap { width: min(1080px, 100% - 2rem); margin-inline: auto; }
+    .wrap { width: min(1200px, 100% - 2rem); margin-inline: auto; }
 
     header.top { position: sticky; top: 0; z-index: 10; padding: 0.8rem 0; border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--paper) 88%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
     section, #start, #status { scroll-margin-top: 4.5rem; }
@@ -60,7 +60,7 @@
     @media (max-width: 640px) { header.top nav a:not(:last-child) { display: none; } header.top nav a { margin-left: 0; } }
     nav a:hover { color: var(--ink); text-decoration: underline; }
 
-    .hero { padding: clamp(3rem, 8vw, 6rem) 0 2.5rem; }
+    .hero { padding: clamp(1.5rem, 4vw, 3.5rem) 0 clamp(2.5rem, 5vw, 4rem); display: grid; gap: 2.5rem; align-items: center; }
     .eyebrow { color: var(--calm); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; margin-bottom: 1rem; }
     .hero h1 { font-size: clamp(2.4rem, 6.4vw, 4.4rem); font-weight: 650; max-width: 16ch; }
     .hero p.sub { margin-top: 1.4rem; max-width: 52ch; font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--ink-2); }
@@ -76,7 +76,14 @@
     .frame .bar span { flex: 1; max-width: 22rem; margin-left: 0.6rem; padding: 0.15rem 0.8rem; border-radius: 999px; background: var(--paper); color: var(--ink-3); font-size: 0.8rem; line-height: 1.5; }
     .frame img { display: block; width: 100%; height: auto; }
     figcaption { margin-top: 0.7rem; font-size: 0.9rem; color: var(--ink-3); }
-    .hero figure { margin-top: clamp(2.5rem, 6vw, 4rem); }
+    .hero-visual { min-width: 0; }
+    .hero-visual .second { display: none; }
+    .cap { margin-top: 0.9rem; font-size: 0.9rem; color: var(--ink-3); }
+    @media (min-width: 1000px) {
+      .hero { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 3.5rem; }
+      .hero h1 { font-size: clamp(2.5rem, 3.9vw, 3.6rem); max-width: 14ch; }
+      .hero-visual .second { display: block; position: relative; z-index: 1; width: 84%; margin: -2.75rem 0 0 16%; }
+    }
 
     section { padding: clamp(3rem, 7vw, 5.5rem) 0; border-top: 1px solid var(--rule); }
     section h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 650; max-width: 20ch; }
@@ -133,6 +140,7 @@
 
   <main>
     <div class="wrap hero">
+      <div class="hero-text">
       <p class="eyebrow">Open-source program intelligence</p>
       <h1>Know when your program will really finish.</h1>
       <p class="sub">PGM Lens reads Jira, GitLab and GitHub, finds the work that is holding everything else up, and forecasts the finish date as honest probabilities instead of one hopeful date.</p>
@@ -140,15 +148,26 @@
         <a class="btn primary" href="https://github.com/vimalmaheedharan/pgmlens">View on GitHub</a>
         <a class="btn" href="#start">Try the demo in a minute</a>
       </div>
-      <figure>
+      </div>
+      <div class="hero-visual">
+        <figure>
         <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
           <picture>
             <source srcset="img/hero-dark.webp" media="(prefers-color-scheme: dark)" />
             <img src="img/hero-light.webp" width="1088" height="569" alt="The PGM Lens overview for a demo program: the verdict 'Off track', then a forecast timeline for three milestones, each with a bar from the most likely finish to the date we are 80% sure of, a due-date flag and a plain verdict such as 'Likely to slip about 2 weeks'." />
           </picture>
         </div>
-        <figcaption>The overview screen, shown with the built-in demo program.</figcaption>
       </figure>
+        <figure class="second">
+          <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
+            <picture>
+              <source srcset="img/attention-dark.webp" media="(prefers-color-scheme: dark)" />
+              <img src="img/attention-light.webp" width="1072" height="420" alt="The risk list: each risk has a severity, a plain title, a one-sentence explanation and the issue keys involved." />
+            </picture>
+          </div>
+        </figure>
+        <p class="cap">Screens from the built-in demo program.</p>
+      </div>
     </div>
 
     <section aria-labelledby="questions">
