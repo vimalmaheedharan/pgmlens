@@ -1,0 +1,6 @@
+site_name: PGM Lens
+nav:
+  - Architecture: architecture.md
+  - Rules: rules.md
+  - Connectors: connectors.md
+docs_dir: docs

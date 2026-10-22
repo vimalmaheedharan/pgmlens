@@ -1,0 +1,1748 @@
+{
+  "schema_version": "1",
+  "program": {
+    "id": "atlas",
+    "name": "Atlas Platform Migration",
+    "description": "Synthetic demo: moving a monolith to a multi-tenant platform, with a mobile client."
+  },
+  "as_of": "2026-10-21T09:00:00Z",
+  "projects": [
+    {
+      "id": "bck",
+      "key": "BCK",
+      "name": "Backend",
+      "owner": "Aisha K."
+    },
+    {
+      "id": "mob",
+      "key": "MOB",
+      "name": "Mobile app",
+      "owner": "Elena V."
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m0",
+      "name": "Foundations",
+      "due_date": "2026-09-30",
+      "start_date": "2026-07-23",
+      "project_id": null
+    },
+    {
+      "id": "m1",
+      "name": "Private beta",
+      "due_date": "2026-11-08",
+      "start_date": "2026-09-01",
+      "project_id": null
+    },
+    {
+      "id": "m2",
+      "name": "General availability",
+      "due_date": "2026-12-20",
+      "start_date": "2026-09-21",
+      "project_id": null
+    },
+    {
+      "id": "m3",
+      "name": "Mobile parity",
+      "due_date": "2027-01-19",
+      "start_date": "2026-10-01",
+      "project_id": null
+    }
+  ],
+  "issues": [
+    {
+      "id": "bck-1",
+      "project_id": "bck",
+      "key": "BCK-1",
+      "title": "Replace legacy session store",
+      "status": "in_progress",
+      "assignee": "Ben R.",
+      "estimate": 5.0,
+      "created_at": "2026-09-11T09:00:00Z",
+      "updated_at": "2026-09-27T09:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-1",
+      "due_date": null
+    },
+    {
+      "id": "bck-2",
+      "project_id": "bck",
+      "key": "BCK-2",
+      "title": "Cut tenant onboarding over to new sessions",
+      "status": "blocked",
+      "assignee": "Chen W.",
+      "estimate": 5.0,
+      "created_at": "2026-09-05T05:04:38.852321Z",
+      "updated_at": "2026-10-18T09:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-2",
+      "due_date": null
+    },
+    {
+      "id": "bck-3",
+      "project_id": "bck",
+      "key": "BCK-3",
+      "title": "Migrate billing webhooks to the new platform",
+      "status": "todo",
+      "assignee": null,
+      "estimate": 8.0,
+      "created_at": "2026-09-21T12:36:05.575507Z",
+      "updated_at": "2026-10-15T09:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-3",
+      "due_date": null
+    },
+    {
+      "id": "bck-4",
+      "project_id": "bck",
+      "key": "BCK-4",
+      "title": "Retire the legacy API gateway routes",
+      "status": "todo",
+      "assignee": "Dmitri S.",
+      "estimate": 5.0,
+      "created_at": "2026-09-23T00:36:15.198643Z",
+      "updated_at": "2026-10-16T09:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-4",
+      "due_date": null
+    },
+    {
+      "id": "mob-1",
+      "project_id": "mob",
+      "key": "MOB-1",
+      "title": "Switch the mobile app to the new gateway",
+      "status": "todo",
+      "assignee": "Elena V.",
+      "estimate": 8.0,
+      "created_at": "2026-10-02T17:08:32.446656Z",
+      "updated_at": "2026-10-17T09:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-1",
+      "due_date": null
+    },
+    {
+      "id": "bck-5",
+      "project_id": "bck",
+      "key": "BCK-5",
+      "title": "Ship search indexer v2",
+      "status": "in_progress",
+      "assignee": "Ben R.",
+      "estimate": 3.0,
+      "created_at": "2026-09-05T10:26:41.014280Z",
+      "updated_at": "2026-10-16T22:56:53.322577Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-5",
+      "due_date": null
+    },
+    {
+      "id": "mob-2",
+      "project_id": "mob",
+      "key": "MOB-2",
+      "title": "Search results screen on indexer v2",
+      "status": "blocked",
+      "assignee": "Grace O.",
+      "estimate": 3.0,
+      "created_at": "2026-09-06T17:28:25.887898Z",
+      "updated_at": "2026-10-19T09:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-2",
+      "due_date": null
+    },
+    {
+      "id": "mob-3",
+      "project_id": "mob",
+      "key": "MOB-3",
+      "title": "Harden crash reporter",
+      "status": "in_progress",
+      "assignee": "Farid M.",
+      "estimate": 5.0,
+      "created_at": "2026-09-21T09:00:00Z",
+      "updated_at": "2026-10-08T09:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-3",
+      "due_date": null
+    },
+    {
+      "id": "bck-6",
+      "project_id": "bck",
+      "key": "BCK-6",
+      "title": "Simplify import pipeline",
+      "status": "done",
+      "assignee": "Aisha K.",
+      "estimate": 1.0,
+      "created_at": "2026-07-24T16:29:01.926138Z",
+      "updated_at": "2026-09-28T07:49:41.224262Z",
+      "resolved_at": "2026-09-28T07:49:41.224262Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-6",
+      "due_date": null
+    },
+    {
+      "id": "bck-7",
+      "project_id": "bck",
+      "key": "BCK-7",
+      "title": "Simplify audit log writer",
+      "status": "done",
+      "assignee": "Farid M.",
+      "estimate": 2.0,
+      "created_at": "2026-07-27T06:35:00.092545Z",
+      "updated_at": "2026-09-10T20:29:38.076549Z",
+      "resolved_at": "2026-09-10T20:29:38.076549Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-7",
+      "due_date": null
+    },
+    {
+      "id": "bck-8",
+      "project_id": "bck",
+      "key": "BCK-8",
+      "title": "Migrate feature flags",
+      "status": "done",
+      "assignee": "Chen W.",
+      "estimate": 2.0,
+      "created_at": "2026-07-28T05:33:28.748742Z",
+      "updated_at": "2026-09-14T13:13:35.167235Z",
+      "resolved_at": "2026-09-14T13:13:35.167235Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-8",
+      "due_date": null
+    },
+    {
+      "id": "bck-9",
+      "project_id": "bck",
+      "key": "BCK-9",
+      "title": "Refactor feature flags",
+      "status": "done",
+      "assignee": "Chen W.",
+      "estimate": 3.0,
+      "created_at": "2026-07-25T01:00:48.503523Z",
+      "updated_at": "2026-09-06T08:04:24.957010Z",
+      "resolved_at": "2026-09-06T08:04:24.957010Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-9",
+      "due_date": null
+    },
+    {
+      "id": "bck-10",
+      "project_id": "bck",
+      "key": "BCK-10",
+      "title": "Version tenant onboarding",
+      "status": "done",
+      "assignee": "Dmitri S.",
+      "estimate": 8.0,
+      "created_at": "2026-07-23T22:55:37.769750Z",
+      "updated_at": "2026-09-26T00:02:58.059587Z",
+      "resolved_at": "2026-09-26T00:02:58.059587Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-10",
+      "due_date": null
+    },
+    {
+      "id": "bck-11",
+      "project_id": "bck",
+      "key": "BCK-11",
+      "title": "Simplify billing webhooks",
+      "status": "done",
+      "assignee": "Aisha K.",
+      "estimate": 5.0,
+      "created_at": "2026-07-27T18:04:52.958222Z",
+      "updated_at": "2026-09-20T15:29:58.103377Z",
+      "resolved_at": "2026-09-20T15:29:58.103377Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-11",
+      "due_date": null
+    },
+    {
+      "id": "bck-12",
+      "project_id": "bck",
+      "key": "BCK-12",
+      "title": "Cache job scheduler",
+      "status": "done",
+      "assignee": "Chen W.",
+      "estimate": 3.0,
+      "created_at": "2026-07-28T08:26:03.377949Z",
+      "updated_at": "2026-09-26T18:35:24.875239Z",
+      "resolved_at": "2026-09-26T18:35:24.875239Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-12",
+      "due_date": null
+    },
+    {
+      "id": "bck-13",
+      "project_id": "bck",
+      "key": "BCK-13",
+      "title": "Validate notification fan-out",
+      "status": "done",
+      "assignee": "Farid M.",
+      "estimate": 3.0,
+      "created_at": "2026-07-23T19:00:57.389150Z",
+      "updated_at": "2026-09-10T07:44:13.563444Z",
+      "resolved_at": "2026-09-10T07:44:13.563444Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-13",
+      "due_date": null
+    },
+    {
+      "id": "bck-14",
+      "project_id": "bck",
+      "key": "BCK-14",
+      "title": "Harden audit log writer",
+      "status": "done",
+      "assignee": "Grace O.",
+      "estimate": 3.0,
+      "created_at": "2026-07-24T18:31:18.795490Z",
+      "updated_at": "2026-08-27T20:42:16.400292Z",
+      "resolved_at": "2026-08-27T20:42:16.400292Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-14",
+      "due_date": null
+    },
+    {
+      "id": "bck-15",
+      "project_id": "bck",
+      "key": "BCK-15",
+      "title": "Document tenant onboarding",
+      "status": "done",
+      "assignee": "Grace O.",
+      "estimate": 2.0,
+      "created_at": "2026-07-25T13:32:09.001578Z",
+      "updated_at": "2026-09-14T09:53:56.545887Z",
+      "resolved_at": "2026-09-14T09:53:56.545887Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-15",
+      "due_date": null
+    },
+    {
+      "id": "bck-16",
+      "project_id": "bck",
+      "key": "BCK-16",
+      "title": "Validate billing webhooks",
+      "status": "done",
+      "assignee": "Farid M.",
+      "estimate": 8.0,
+      "created_at": "2026-07-28T23:52:41.738270Z",
+      "updated_at": "2026-09-07T06:13:16.542814Z",
+      "resolved_at": "2026-09-07T06:13:16.542814Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-16",
+      "due_date": null
+    },
+    {
+      "id": "bck-17",
+      "project_id": "bck",
+      "key": "BCK-17",
+      "title": "Add report exports",
+      "status": "done",
+      "assignee": "Elena V.",
+      "estimate": 5.0,
+      "created_at": "2026-07-27T17:59:39.332057Z",
+      "updated_at": "2026-09-08T10:05:49.904693Z",
+      "resolved_at": "2026-09-08T10:05:49.904693Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-17",
+      "due_date": null
+    },
+    {
+      "id": "bck-18",
+      "project_id": "bck",
+      "key": "BCK-18",
+      "title": "Refactor rate limiter",
+      "status": "done",
+      "assignee": "Farid M.",
+      "estimate": 3.0,
+      "created_at": "2026-07-27T12:05:43.159252Z",
+      "updated_at": "2026-09-20T11:12:04.756273Z",
+      "resolved_at": "2026-09-20T11:12:04.756273Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-18",
+      "due_date": null
+    },
+    {
+      "id": "bck-19",
+      "project_id": "bck",
+      "key": "BCK-19",
+      "title": "Version auth tokens",
+      "status": "done",
+      "assignee": "Grace O.",
+      "estimate": 3.0,
+      "created_at": "2026-07-23T17:03:18.232010Z",
+      "updated_at": "2026-09-01T13:27:40.605155Z",
+      "resolved_at": "2026-09-01T13:27:40.605155Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-19",
+      "due_date": null
+    },
+    {
+      "id": "mob-4",
+      "project_id": "mob",
+      "key": "MOB-4",
+      "title": "Cache dark mode",
+      "status": "done",
+      "assignee": "Aisha K.",
+      "estimate": 3.0,
+      "created_at": "2026-07-24T15:22:53.506115Z",
+      "updated_at": "2026-09-16T03:16:38.959242Z",
+      "resolved_at": "2026-09-16T03:16:38.959242Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-4",
+      "due_date": null
+    },
+    {
+      "id": "mob-5",
+      "project_id": "mob",
+      "key": "MOB-5",
+      "title": "Validate onboarding flow",
+      "status": "done",
+      "assignee": "Dmitri S.",
+      "estimate": 2.0,
+      "created_at": "2026-07-25T17:58:15.577510Z",
+      "updated_at": "2026-09-22T08:35:59.197593Z",
+      "resolved_at": "2026-09-22T08:35:59.197593Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-5",
+      "due_date": null
+    },
+    {
+      "id": "mob-6",
+      "project_id": "mob",
+      "key": "MOB-6",
+      "title": "Simplify search results",
+      "status": "done",
+      "assignee": "Ben R.",
+      "estimate": 8.0,
+      "created_at": "2026-07-27T20:16:42.288316Z",
+      "updated_at": "2026-09-20T15:12:53.669281Z",
+      "resolved_at": "2026-09-20T15:12:53.669281Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-6",
+      "due_date": null
+    },
+    {
+      "id": "mob-7",
+      "project_id": "mob",
+      "key": "MOB-7",
+      "title": "Refactor push registration",
+      "status": "done",
+      "assignee": "Elena V.",
+      "estimate": 8.0,
+      "created_at": "2026-07-25T18:30:49.221865Z",
+      "updated_at": "2026-09-15T05:40:49.471618Z",
+      "resolved_at": "2026-09-15T05:40:49.471618Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-7",
+      "due_date": null
+    },
+    {
+      "id": "mob-8",
+      "project_id": "mob",
+      "key": "MOB-8",
+      "title": "Harden push registration",
+      "status": "done",
+      "assignee": "Grace O.",
+      "estimate": 2.0,
+      "created_at": "2026-07-23T15:47:05.129020Z",
+      "updated_at": "2026-09-13T02:08:07.651563Z",
+      "resolved_at": "2026-09-13T02:08:07.651563Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-8",
+      "due_date": null
+    },
+    {
+      "id": "mob-9",
+      "project_id": "mob",
+      "key": "MOB-9",
+      "title": "Load-test deep links",
+      "status": "done",
+      "assignee": "Dmitri S.",
+      "estimate": 8.0,
+      "created_at": "2026-07-26T22:52:58.441531Z",
+      "updated_at": "2026-09-03T05:40:23.316328Z",
+      "resolved_at": "2026-09-03T05:40:23.316328Z",
+      "milestone_id": "m0",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-9",
+      "due_date": null
+    },
+    {
+      "id": "bck-20",
+      "project_id": "bck",
+      "key": "BCK-20",
+      "title": "Migrate rate limiter",
+      "status": "done",
+      "assignee": "Elena V.",
+      "estimate": 1.0,
+      "created_at": "2026-09-06T12:57:08.197638Z",
+      "updated_at": "2026-10-05T00:44:11.096920Z",
+      "resolved_at": "2026-10-05T00:44:11.096920Z",
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-20",
+      "due_date": null
+    },
+    {
+      "id": "mob-10",
+      "project_id": "mob",
+      "key": "MOB-10",
+      "title": "Validate settings page",
+      "status": "done",
+      "assignee": "Grace O.",
+      "estimate": 1.0,
+      "created_at": "2026-09-02T23:25:22.178471Z",
+      "updated_at": "2026-09-24T17:11:14.059357Z",
+      "resolved_at": "2026-09-24T17:11:14.059357Z",
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-10",
+      "due_date": null
+    },
+    {
+      "id": "bck-21",
+      "project_id": "bck",
+      "key": "BCK-21",
+      "title": "Retire session store",
+      "status": "done",
+      "assignee": "Dmitri S.",
+      "estimate": 3.0,
+      "created_at": "2026-09-01T09:28:02.371867Z",
+      "updated_at": "2026-10-07T18:24:12.187923Z",
+      "resolved_at": "2026-10-07T18:24:12.187923Z",
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-21",
+      "due_date": null
+    },
+    {
+      "id": "mob-11",
+      "project_id": "mob",
+      "key": "MOB-11",
+      "title": "Version biometric unlock",
+      "status": "done",
+      "assignee": "Elena V.",
+      "estimate": 3.0,
+      "created_at": "2026-09-06T20:25:06.271916Z",
+      "updated_at": "2026-09-28T06:40:27.514055Z",
+      "resolved_at": "2026-09-28T06:40:27.514055Z",
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-11",
+      "due_date": null
+    },
+    {
+      "id": "mob-12",
+      "project_id": "mob",
+      "key": "MOB-12",
+      "title": "Index push registration",
+      "status": "done",
+      "assignee": "Ben R.",
+      "estimate": 8.0,
+      "created_at": "2026-09-02T07:00:31.876816Z",
+      "updated_at": "2026-10-05T15:39:59.882917Z",
+      "resolved_at": "2026-10-05T15:39:59.882917Z",
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-12",
+      "due_date": null
+    },
+    {
+      "id": "mob-13",
+      "project_id": "mob",
+      "key": "MOB-13",
+      "title": "Migrate offline sync",
+      "status": "done",
+      "assignee": "Elena V.",
+      "estimate": 3.0,
+      "created_at": "2026-09-03T07:40:42.499951Z",
+      "updated_at": "2026-09-23T17:43:42.700442Z",
+      "resolved_at": "2026-09-23T17:43:42.700442Z",
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-13",
+      "due_date": null
+    },
+    {
+      "id": "bck-22",
+      "project_id": "bck",
+      "key": "BCK-22",
+      "title": "Harden billing webhooks",
+      "status": "done",
+      "assignee": "Ben R.",
+      "estimate": 5.0,
+      "created_at": "2026-09-06T15:26:00.176227Z",
+      "updated_at": "2026-10-13T10:20:28.291217Z",
+      "resolved_at": "2026-10-13T10:20:28.291217Z",
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-22",
+      "due_date": null
+    },
+    {
+      "id": "bck-23",
+      "project_id": "bck",
+      "key": "BCK-23",
+      "title": "Add rate limiter",
+      "status": "done",
+      "assignee": "Elena V.",
+      "estimate": 5.0,
+      "created_at": "2026-09-05T23:16:48.568153Z",
+      "updated_at": "2026-09-22T00:19:22.052642Z",
+      "resolved_at": "2026-09-22T00:19:22.052642Z",
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-23",
+      "due_date": null
+    },
+    {
+      "id": "mob-14",
+      "project_id": "mob",
+      "key": "MOB-14",
+      "title": "Load-test profile editor",
+      "status": "done",
+      "assignee": "Elena V.",
+      "estimate": 8.0,
+      "created_at": "2026-09-06T14:37:49.288499Z",
+      "updated_at": "2026-10-15T14:04:17.891594Z",
+      "resolved_at": "2026-10-15T14:04:17.891594Z",
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-14",
+      "due_date": null
+    },
+    {
+      "id": "bck-24",
+      "project_id": "bck",
+      "key": "BCK-24",
+      "title": "Retire API gateway routes",
+      "status": "in_progress",
+      "assignee": "Ben R.",
+      "estimate": 5.0,
+      "created_at": "2026-09-05T12:20:27.380480Z",
+      "updated_at": "2026-10-16T20:14:30.522064Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-24",
+      "due_date": null
+    },
+    {
+      "id": "bck-25",
+      "project_id": "bck",
+      "key": "BCK-25",
+      "title": "Backfill permission checks",
+      "status": "in_progress",
+      "assignee": "Ben R.",
+      "estimate": 5.0,
+      "created_at": "2026-09-05T06:34:56.785080Z",
+      "updated_at": "2026-10-15T09:41:54.573507Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-25",
+      "due_date": null
+    },
+    {
+      "id": "bck-26",
+      "project_id": "bck",
+      "key": "BCK-26",
+      "title": "Document auth tokens",
+      "status": "in_progress",
+      "assignee": "Ben R.",
+      "estimate": 8.0,
+      "created_at": "2026-09-02T17:21:23.099517Z",
+      "updated_at": "2026-10-20T15:34:31.424862Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-26",
+      "due_date": null
+    },
+    {
+      "id": "bck-27",
+      "project_id": "bck",
+      "key": "BCK-27",
+      "title": "Validate auth tokens",
+      "status": "todo",
+      "assignee": "Elena V.",
+      "estimate": 2.0,
+      "created_at": "2026-09-01T19:13:22.815787Z",
+      "updated_at": "2026-10-20T01:17:19.307900Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-27",
+      "due_date": null
+    },
+    {
+      "id": "bck-28",
+      "project_id": "bck",
+      "key": "BCK-28",
+      "title": "Document billing webhooks",
+      "status": "todo",
+      "assignee": "Grace O.",
+      "estimate": 8.0,
+      "created_at": "2026-10-11T07:41:57.108763Z",
+      "updated_at": "2026-10-20T21:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-28",
+      "due_date": null
+    },
+    {
+      "id": "bck-29",
+      "project_id": "bck",
+      "key": "BCK-29",
+      "title": "Refactor permission checks",
+      "status": "todo",
+      "assignee": "Dmitri S.",
+      "estimate": 2.0,
+      "created_at": "2026-10-17T14:09:55.643935Z",
+      "updated_at": "2026-10-20T21:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-29",
+      "due_date": null
+    },
+    {
+      "id": "mob-15",
+      "project_id": "mob",
+      "key": "MOB-15",
+      "title": "Index deep links",
+      "status": "todo",
+      "assignee": "Dmitri S.",
+      "estimate": 2.0,
+      "created_at": "2026-10-17T22:40:50.382570Z",
+      "updated_at": "2026-10-20T21:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-15",
+      "due_date": null
+    },
+    {
+      "id": "bck-30",
+      "project_id": "bck",
+      "key": "BCK-30",
+      "title": "Document audit log writer",
+      "status": "todo",
+      "assignee": "Dmitri S.",
+      "estimate": 5.0,
+      "created_at": "2026-10-19T09:44:11.776506Z",
+      "updated_at": "2026-10-20T21:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-30",
+      "due_date": null
+    },
+    {
+      "id": "mob-16",
+      "project_id": "mob",
+      "key": "MOB-16",
+      "title": "Validate biometric unlock",
+      "status": "todo",
+      "assignee": "Aisha K.",
+      "estimate": 1.0,
+      "created_at": "2026-10-11T17:40:45.049409Z",
+      "updated_at": "2026-10-20T21:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m1",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-16",
+      "due_date": null
+    },
+    {
+      "id": "bck-31",
+      "project_id": "bck",
+      "key": "BCK-31",
+      "title": "Harden notification fan-out",
+      "status": "done",
+      "assignee": "Chen W.",
+      "estimate": 2.0,
+      "created_at": "2026-09-26T04:17:07.157631Z",
+      "updated_at": "2026-10-12T03:04:03.382075Z",
+      "resolved_at": "2026-10-12T03:04:03.382075Z",
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-31",
+      "due_date": null
+    },
+    {
+      "id": "bck-32",
+      "project_id": "bck",
+      "key": "BCK-32",
+      "title": "Instrument report exports",
+      "status": "done",
+      "assignee": "Ben R.",
+      "estimate": 2.0,
+      "created_at": "2026-09-23T21:45:03.442090Z",
+      "updated_at": "2026-10-09T17:19:28.395519Z",
+      "resolved_at": "2026-10-09T17:19:28.395519Z",
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-32",
+      "due_date": null
+    },
+    {
+      "id": "bck-33",
+      "project_id": "bck",
+      "key": "BCK-33",
+      "title": "Harden auth tokens",
+      "status": "done",
+      "assignee": "Grace O.",
+      "estimate": 8.0,
+      "created_at": "2026-09-26T12:15:33.237056Z",
+      "updated_at": "2026-10-11T09:34:03.065293Z",
+      "resolved_at": "2026-10-11T09:34:03.065293Z",
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-33",
+      "due_date": null
+    },
+    {
+      "id": "bck-34",
+      "project_id": "bck",
+      "key": "BCK-34",
+      "title": "Add audit log writer",
+      "status": "in_progress",
+      "assignee": "Aisha K.",
+      "estimate": 5.0,
+      "created_at": "2026-09-26T11:12:43.868720Z",
+      "updated_at": "2026-10-15T19:36:11.356009Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-34",
+      "due_date": null
+    },
+    {
+      "id": "mob-17",
+      "project_id": "mob",
+      "key": "MOB-17",
+      "title": "Add deep links",
+      "status": "in_progress",
+      "assignee": "Ben R.",
+      "estimate": 1.0,
+      "created_at": "2026-09-26T18:57:06.381481Z",
+      "updated_at": "2026-10-16T04:29:25.235735Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-17",
+      "due_date": null
+    },
+    {
+      "id": "bck-35",
+      "project_id": "bck",
+      "key": "BCK-35",
+      "title": "Index report exports",
+      "status": "todo",
+      "assignee": "Grace O.",
+      "estimate": 3.0,
+      "created_at": "2026-10-16T17:21:04.557739Z",
+      "updated_at": "2026-10-20T09:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-35",
+      "due_date": null
+    },
+    {
+      "id": "bck-36",
+      "project_id": "bck",
+      "key": "BCK-36",
+      "title": "Index permission checks",
+      "status": "todo",
+      "assignee": "Farid M.",
+      "estimate": 5.0,
+      "created_at": "2026-10-12T09:49:04.940889Z",
+      "updated_at": "2026-10-20T09:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-36",
+      "due_date": null
+    },
+    {
+      "id": "bck-37",
+      "project_id": "bck",
+      "key": "BCK-37",
+      "title": "Migrate import pipeline",
+      "status": "todo",
+      "assignee": "Ben R.",
+      "estimate": 8.0,
+      "created_at": "2026-10-17T11:25:28.242681Z",
+      "updated_at": "2026-10-20T09:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-37",
+      "due_date": null
+    },
+    {
+      "id": "bck-38",
+      "project_id": "bck",
+      "key": "BCK-38",
+      "title": "Version permission checks",
+      "status": "todo",
+      "assignee": "Farid M.",
+      "estimate": 2.0,
+      "created_at": "2026-09-21T16:13:13.787638Z",
+      "updated_at": "2026-10-19T11:50:27.266615Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-38",
+      "due_date": null
+    },
+    {
+      "id": "bck-39",
+      "project_id": "bck",
+      "key": "BCK-39",
+      "title": "Cache billing webhooks",
+      "status": "todo",
+      "assignee": "Elena V.",
+      "estimate": 2.0,
+      "created_at": "2026-09-22T11:45:31.659772Z",
+      "updated_at": "2026-10-20T21:27:50.216419Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-39",
+      "due_date": null
+    },
+    {
+      "id": "bck-40",
+      "project_id": "bck",
+      "key": "BCK-40",
+      "title": "Cache import pipeline",
+      "status": "todo",
+      "assignee": "Aisha K.",
+      "estimate": 1.0,
+      "created_at": "2026-09-24T19:01:59.732616Z",
+      "updated_at": "2026-10-15T17:24:36.567644Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-40",
+      "due_date": null
+    },
+    {
+      "id": "mob-18",
+      "project_id": "mob",
+      "key": "MOB-18",
+      "title": "Simplify settings page",
+      "status": "todo",
+      "assignee": "Aisha K.",
+      "estimate": 3.0,
+      "created_at": "2026-09-24T21:02:55.714769Z",
+      "updated_at": "2026-10-18T20:37:53.803890Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-18",
+      "due_date": null
+    },
+    {
+      "id": "bck-41",
+      "project_id": "bck",
+      "key": "BCK-41",
+      "title": "Load-test search indexer",
+      "status": "todo",
+      "assignee": "Farid M.",
+      "estimate": 3.0,
+      "created_at": "2026-09-22T19:22:14.797836Z",
+      "updated_at": "2026-10-17T01:52:06.170471Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-41",
+      "due_date": null
+    },
+    {
+      "id": "bck-42",
+      "project_id": "bck",
+      "key": "BCK-42",
+      "title": "Migrate report exports",
+      "status": "todo",
+      "assignee": "Chen W.",
+      "estimate": 8.0,
+      "created_at": "2026-09-26T23:44:44.654611Z",
+      "updated_at": "2026-10-15T19:13:16.896844Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/BCK-42",
+      "due_date": null
+    },
+    {
+      "id": "mob-19",
+      "project_id": "mob",
+      "key": "MOB-19",
+      "title": "Instrument push registration",
+      "status": "todo",
+      "assignee": "Aisha K.",
+      "estimate": 3.0,
+      "created_at": "2026-09-22T15:41:39.195479Z",
+      "updated_at": "2026-10-20T22:27:01.642182Z",
+      "resolved_at": null,
+      "milestone_id": "m2",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-19",
+      "due_date": null
+    },
+    {
+      "id": "mob-20",
+      "project_id": "mob",
+      "key": "MOB-20",
+      "title": "Document search results",
+      "status": "done",
+      "assignee": "Aisha K.",
+      "estimate": 2.0,
+      "created_at": "2026-10-06T15:36:53.693704Z",
+      "updated_at": "2026-10-17T09:00:00Z",
+      "resolved_at": "2026-10-17T09:00:00Z",
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-20",
+      "due_date": null
+    },
+    {
+      "id": "mob-21",
+      "project_id": "mob",
+      "key": "MOB-21",
+      "title": "Cache image uploads",
+      "status": "in_progress",
+      "assignee": "Dmitri S.",
+      "estimate": 8.0,
+      "created_at": "2026-10-05T14:18:35.097165Z",
+      "updated_at": "2026-10-16T08:56:26.615515Z",
+      "resolved_at": null,
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-21",
+      "due_date": null
+    },
+    {
+      "id": "mob-22",
+      "project_id": "mob",
+      "key": "MOB-22",
+      "title": "Validate offline sync",
+      "status": "in_progress",
+      "assignee": "Aisha K.",
+      "estimate": 2.0,
+      "created_at": "2026-10-04T16:51:45.823243Z",
+      "updated_at": "2026-10-17T08:49:39.715195Z",
+      "resolved_at": null,
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-22",
+      "due_date": null
+    },
+    {
+      "id": "mob-23",
+      "project_id": "mob",
+      "key": "MOB-23",
+      "title": "Retire receipt viewer",
+      "status": "todo",
+      "assignee": "Aisha K.",
+      "estimate": 2.0,
+      "created_at": "2026-10-17T12:34:11.010685Z",
+      "updated_at": "2026-10-20T09:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-23",
+      "due_date": null
+    },
+    {
+      "id": "mob-24",
+      "project_id": "mob",
+      "key": "MOB-24",
+      "title": "Refactor dark mode",
+      "status": "todo",
+      "assignee": "Elena V.",
+      "estimate": 3.0,
+      "created_at": "2026-10-17T11:14:43.801192Z",
+      "updated_at": "2026-10-20T09:00:00Z",
+      "resolved_at": null,
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-24",
+      "due_date": null
+    },
+    {
+      "id": "mob-25",
+      "project_id": "mob",
+      "key": "MOB-25",
+      "title": "Simplify onboarding flow",
+      "status": "todo",
+      "assignee": "Ben R.",
+      "estimate": 3.0,
+      "created_at": "2026-10-06T11:49:10.003499Z",
+      "updated_at": "2026-10-17T06:00:01.488429Z",
+      "resolved_at": null,
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-25",
+      "due_date": null
+    },
+    {
+      "id": "mob-26",
+      "project_id": "mob",
+      "key": "MOB-26",
+      "title": "Version search results",
+      "status": "todo",
+      "assignee": "Grace O.",
+      "estimate": 1.0,
+      "created_at": "2026-10-05T04:20:13.057485Z",
+      "updated_at": "2026-10-21T01:41:05.853525Z",
+      "resolved_at": null,
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-26",
+      "due_date": null
+    },
+    {
+      "id": "mob-27",
+      "project_id": "mob",
+      "key": "MOB-27",
+      "title": "Retire onboarding flow",
+      "status": "todo",
+      "assignee": "Aisha K.",
+      "estimate": 8.0,
+      "created_at": "2026-10-02T03:50:16.912108Z",
+      "updated_at": "2026-10-19T08:58:04.290387Z",
+      "resolved_at": null,
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-27",
+      "due_date": null
+    },
+    {
+      "id": "mob-28",
+      "project_id": "mob",
+      "key": "MOB-28",
+      "title": "Harden dark mode",
+      "status": "todo",
+      "assignee": "Farid M.",
+      "estimate": 2.0,
+      "created_at": "2026-10-01T10:23:32.772277Z",
+      "updated_at": "2026-10-18T19:24:47.101200Z",
+      "resolved_at": null,
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-28",
+      "due_date": null
+    },
+    {
+      "id": "mob-29",
+      "project_id": "mob",
+      "key": "MOB-29",
+      "title": "Simplify push registration",
+      "status": "todo",
+      "assignee": "Elena V.",
+      "estimate": 5.0,
+      "created_at": "2026-10-03T14:10:01.566371Z",
+      "updated_at": "2026-10-21T03:48:43.013229Z",
+      "resolved_at": null,
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-29",
+      "due_date": null
+    },
+    {
+      "id": "mob-30",
+      "project_id": "mob",
+      "key": "MOB-30",
+      "title": "Index release pipeline",
+      "status": "todo",
+      "assignee": "Ben R.",
+      "estimate": 1.0,
+      "created_at": "2026-10-03T13:30:35.345546Z",
+      "updated_at": "2026-10-21T02:58:35.919925Z",
+      "resolved_at": null,
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-30",
+      "due_date": null
+    },
+    {
+      "id": "mob-31",
+      "project_id": "mob",
+      "key": "MOB-31",
+      "title": "Harden settings page",
+      "status": "todo",
+      "assignee": "Chen W.",
+      "estimate": 8.0,
+      "created_at": "2026-10-02T20:55:56.216813Z",
+      "updated_at": "2026-10-20T02:44:56.322525Z",
+      "resolved_at": null,
+      "milestone_id": "m3",
+      "labels": [],
+      "url": "https://tracker.example.com/browse/MOB-31",
+      "due_date": null
+    }
+  ],
+  "dependencies": [
+    {
+      "blocker_id": "bck-1",
+      "blocked_id": "bck-2"
+    },
+    {
+      "blocker_id": "bck-2",
+      "blocked_id": "bck-3"
+    },
+    {
+      "blocker_id": "bck-3",
+      "blocked_id": "bck-4"
+    },
+    {
+      "blocker_id": "bck-4",
+      "blocked_id": "mob-1"
+    },
+    {
+      "blocker_id": "bck-5",
+      "blocked_id": "mob-2"
+    },
+    {
+      "blocker_id": "bck-40",
+      "blocked_id": "mob-23"
+    },
+    {
+      "blocker_id": "bck-36",
+      "blocked_id": "mob-29"
+    },
+    {
+      "blocker_id": "bck-38",
+      "blocked_id": "mob-17"
+    },
+    {
+      "blocker_id": "bck-26",
+      "blocked_id": "mob-28"
+    },
+    {
+      "blocker_id": "bck-27",
+      "blocked_id": "bck-41"
+    },
+    {
+      "blocker_id": "bck-2",
+      "blocked_id": "bck-27"
+    },
+    {
+      "blocker_id": "bck-37",
+      "blocked_id": "bck-41"
+    },
+    {
+      "blocker_id": "bck-30",
+      "blocked_id": "bck-34"
+    },
+    {
+      "blocker_id": "bck-26",
+      "blocked_id": "mob-2"
+    },
+    {
+      "blocker_id": "bck-40",
+      "blocked_id": "bck-3"
+    },
+    {
+      "blocker_id": "mob-22",
+      "blocked_id": "mob-15"
+    },
+    {
+      "blocker_id": "bck-28",
+      "blocked_id": "mob-21"
+    },
+    {
+      "blocker_id": "bck-38",
+      "blocked_id": "bck-35"
+    },
+    {
+      "blocker_id": "bck-2",
+      "blocked_id": "bck-28"
+    },
+    {
+      "blocker_id": "mob-18",
+      "blocked_id": "bck-37"
+    },
+    {
+      "blocker_id": "bck-34",
+      "blocked_id": "mob-1"
+    },
+    {
+      "blocker_id": "bck-34",
+      "blocked_id": "bck-38"
+    },
+    {
+      "blocker_id": "mob-20",
+      "blocked_id": "mob-18"
+    },
+    {
+      "blocker_id": "mob-10",
+      "blocked_id": "bck-2"
+    },
+    {
+      "blocker_id": "bck-13",
+      "blocked_id": "mob-16"
+    },
+    {
+      "blocker_id": "bck-17",
+      "blocked_id": "mob-29"
+    },
+    {
+      "blocker_id": "mob-6",
+      "blocked_id": "bck-3"
+    }
+  ],
+  "events": [
+    {
+      "id": null,
+      "issue_id": "bck-6",
+      "type": "status_changed",
+      "at": "2026-09-28T07:49:41.224262Z",
+      "actor": "Aisha K.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-7",
+      "type": "status_changed",
+      "at": "2026-09-10T20:29:38.076549Z",
+      "actor": "Farid M.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-8",
+      "type": "status_changed",
+      "at": "2026-09-14T13:13:35.167235Z",
+      "actor": "Chen W.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-9",
+      "type": "status_changed",
+      "at": "2026-09-06T08:04:24.957010Z",
+      "actor": "Chen W.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-10",
+      "type": "status_changed",
+      "at": "2026-09-26T00:02:58.059587Z",
+      "actor": "Dmitri S.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-11",
+      "type": "status_changed",
+      "at": "2026-09-20T15:29:58.103377Z",
+      "actor": "Aisha K.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-12",
+      "type": "status_changed",
+      "at": "2026-09-26T18:35:24.875239Z",
+      "actor": "Chen W.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-13",
+      "type": "status_changed",
+      "at": "2026-09-10T07:44:13.563444Z",
+      "actor": "Farid M.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-14",
+      "type": "status_changed",
+      "at": "2026-08-27T20:42:16.400292Z",
+      "actor": "Grace O.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-15",
+      "type": "status_changed",
+      "at": "2026-09-14T09:53:56.545887Z",
+      "actor": "Grace O.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-16",
+      "type": "status_changed",
+      "at": "2026-09-07T06:13:16.542814Z",
+      "actor": "Farid M.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-17",
+      "type": "status_changed",
+      "at": "2026-09-08T10:05:49.904693Z",
+      "actor": "Elena V.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-18",
+      "type": "status_changed",
+      "at": "2026-09-20T11:12:04.756273Z",
+      "actor": "Farid M.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-19",
+      "type": "status_changed",
+      "at": "2026-09-01T13:27:40.605155Z",
+      "actor": "Grace O.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-4",
+      "type": "status_changed",
+      "at": "2026-09-16T03:16:38.959242Z",
+      "actor": "Aisha K.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-5",
+      "type": "status_changed",
+      "at": "2026-09-22T08:35:59.197593Z",
+      "actor": "Dmitri S.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-6",
+      "type": "status_changed",
+      "at": "2026-09-20T15:12:53.669281Z",
+      "actor": "Ben R.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-7",
+      "type": "status_changed",
+      "at": "2026-09-15T05:40:49.471618Z",
+      "actor": "Elena V.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-8",
+      "type": "status_changed",
+      "at": "2026-09-13T02:08:07.651563Z",
+      "actor": "Grace O.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-9",
+      "type": "status_changed",
+      "at": "2026-09-03T05:40:23.316328Z",
+      "actor": "Dmitri S.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-20",
+      "type": "status_changed",
+      "at": "2026-10-05T00:44:11.096920Z",
+      "actor": "Elena V.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-10",
+      "type": "status_changed",
+      "at": "2026-09-24T17:11:14.059357Z",
+      "actor": "Grace O.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-21",
+      "type": "status_changed",
+      "at": "2026-10-07T18:24:12.187923Z",
+      "actor": "Dmitri S.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-11",
+      "type": "status_changed",
+      "at": "2026-09-28T06:40:27.514055Z",
+      "actor": "Elena V.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-12",
+      "type": "status_changed",
+      "at": "2026-10-05T15:39:59.882917Z",
+      "actor": "Ben R.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-13",
+      "type": "status_changed",
+      "at": "2026-09-23T17:43:42.700442Z",
+      "actor": "Elena V.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-22",
+      "type": "status_changed",
+      "at": "2026-10-13T10:20:28.291217Z",
+      "actor": "Ben R.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-23",
+      "type": "status_changed",
+      "at": "2026-09-22T00:19:22.052642Z",
+      "actor": "Elena V.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-14",
+      "type": "status_changed",
+      "at": "2026-10-15T14:04:17.891594Z",
+      "actor": "Elena V.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-28",
+      "type": "scope_added",
+      "at": "2026-10-11T07:41:57.108763Z",
+      "actor": "Product",
+      "data": {
+        "milestone": "m1"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-29",
+      "type": "scope_added",
+      "at": "2026-10-17T14:09:55.643935Z",
+      "actor": "Product",
+      "data": {
+        "milestone": "m1"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-15",
+      "type": "scope_added",
+      "at": "2026-10-17T22:40:50.382570Z",
+      "actor": "Product",
+      "data": {
+        "milestone": "m1"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-30",
+      "type": "scope_added",
+      "at": "2026-10-19T09:44:11.776506Z",
+      "actor": "Product",
+      "data": {
+        "milestone": "m1"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-16",
+      "type": "scope_added",
+      "at": "2026-10-11T17:40:45.049409Z",
+      "actor": "Product",
+      "data": {
+        "milestone": "m1"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-31",
+      "type": "status_changed",
+      "at": "2026-10-12T03:04:03.382075Z",
+      "actor": "Chen W.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-32",
+      "type": "status_changed",
+      "at": "2026-10-09T17:19:28.395519Z",
+      "actor": "Ben R.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "bck-33",
+      "type": "status_changed",
+      "at": "2026-10-11T09:34:03.065293Z",
+      "actor": "Grace O.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    },
+    {
+      "id": null,
+      "issue_id": "mob-20",
+      "type": "status_changed",
+      "at": "2026-10-17T09:00:00Z",
+      "actor": "Aisha K.",
+      "data": {
+        "from": "in_progress",
+        "to": "done"
+      }
+    }
+  ]
+}

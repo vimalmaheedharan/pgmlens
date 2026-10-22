@@ -1,0 +1,87 @@
+# Default PGM Lens risk rules.
+#
+# Each rule picks a built-in evaluator via `type`, a severity (low | medium | high | critical),
+# human-facing copy and tunable `params`. To customize, copy this file, or write a small file
+# that starts with `extends: default` and only lists the rules you want to change or add:
+#
+#   version: 1
+#   extends: default
+#   rules:
+#     - id: stale-blocker
+#       type: stale_blocker
+#       severity: critical
+#       title: Stale blocker is holding up other work
+#       params: { stale_days: 5 }
+version: 1
+rules:
+  - id: milestone-slip
+    type: milestone_slip
+    severity: high
+    title: Milestone is likely to miss its date
+    action: Cut or defer scope, add capacity, or reset the date with stakeholders now rather than at the deadline.
+    params:
+      p80_slip_days: 0       # flag when the 80%-confidence date is later than the due date by more than this
+      critical_below: 0.2    # escalate to critical when the on-time probability is below this
+
+  - id: stale-blocker
+    type: stale_blocker
+    severity: high
+    title: Stale blocker is holding up other work
+    action: Get an update from the owner today, or reassign the blocker so the work behind it can move.
+    params:
+      stale_days: 10
+
+  - id: blocked-chain
+    type: blocked_chain
+    severity: high
+    title: Deep dependency chain behind a single issue
+    action: Prioritize the root of the chain; every day it waits delays everything downstream.
+    params:
+      min_depth: 3
+
+  - id: unassigned-critical
+    type: unassigned_critical
+    severity: high
+    title: Critical-path work has no owner
+    action: Assign an owner. Unowned critical work is the most common cause of silent slips.
+
+  - id: dependency-cycle
+    type: dependency_cycle
+    severity: high
+    title: Circular dependency
+    action: Break the cycle by splitting one of the issues or removing a link that is not a real blocker.
+
+  - id: scope-creep
+    type: scope_creep
+    severity: medium
+    title: Scope is growing
+    action: Agree what is intentionally in scope, and decide what moves out to make room for what came in.
+    params:
+      window_days: 14
+      threshold_pct: 0.15
+      min_added: 3
+
+  - id: overloaded-owner
+    type: overloaded_owner
+    severity: medium
+    title: Owner is overloaded
+    action: Rebalance work. Too much work in progress slows everything down, not just this person.
+    params:
+      max_in_progress: 4
+      max_open: 12
+
+  - id: silent-in-progress
+    type: silent_in_progress
+    severity: low
+    title: In-progress work has gone quiet
+    action: Ask for a quick status. Quiet work is often stuck work.
+    params:
+      stale_days: 10
+
+  - id: cross-project-coupling
+    type: cross_project_coupling
+    severity: low
+    title: Heavy dependencies between teams
+    action: Agree on interface contracts or sequence the shared work explicitly.
+    params:
+      min_unresolved: 4

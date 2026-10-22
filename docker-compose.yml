@@ -1,0 +1,9 @@
+services:
+  pgmlens:
+    build: .
+    ports: ["8080:8000"]
+    environment:
+      PGMLENS_DEMO: "true"
+    volumes: ["pgmlens-data:/data"]
+volumes:
+  pgmlens-data:

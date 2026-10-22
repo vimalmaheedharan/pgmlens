@@ -1,0 +1,10 @@
+# Example: tighter stale-blocker threshold, everything else default.
+version: 1
+extends: default
+rules:
+  - id: stale-blocker
+    type: stale_blocker
+    severity: critical
+    title: Stale blocker is holding up other work
+    action: Escalate to the owner's lead today.
+    params: { stale_days: 5 }

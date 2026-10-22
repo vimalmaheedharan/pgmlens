@@ -1,0 +1,28 @@
+[project]
+name = "pgmlens-api"
+version = "0.1.0"
+description = "PGM Lens API service."
+requires-python = ">=3.12"
+license = "Apache-2.0"
+authors = [{ name = "PGM Lens contributors" }]
+dependencies = [
+    "pgmlens-core",
+    "pgmlens-connectors",
+    "pgmlens-reporting",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+]
+
+[project.optional-dependencies]
+otel = [
+    "opentelemetry-sdk>=1.27",
+    "opentelemetry-exporter-otlp>=1.27",
+    "opentelemetry-instrumentation-fastapi>=0.48b0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pgmlens_api"]
