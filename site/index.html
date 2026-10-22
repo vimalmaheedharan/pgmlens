@@ -61,8 +61,11 @@
     .btn:hover { filter: brightness(1.12); }
 
     figure { margin: 0; }
-    .frame { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: clamp(0.5rem, 1.5vw, 1rem); box-shadow: 0 18px 40px -24px rgba(8, 22, 28, 0.35); }
-    .frame img { display: block; width: 100%; height: auto; border-radius: 6px; }
+    .frame { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; box-shadow: 0 18px 40px -24px rgba(8, 22, 28, 0.35); }
+    .frame .bar { display: flex; align-items: center; gap: 0.4rem; padding: 0.55rem 0.8rem; background: var(--surface); border-bottom: 1px solid var(--rule); }
+    .frame .bar i { width: 0.65rem; height: 0.65rem; border-radius: 50%; background: var(--rule); }
+    .frame .bar span { flex: 1; max-width: 22rem; margin-left: 0.6rem; padding: 0.15rem 0.8rem; border-radius: 999px; background: var(--paper); color: var(--ink-3); font-size: 0.8rem; line-height: 1.5; }
+    .frame img { display: block; width: 100%; height: auto; }
     figcaption { margin-top: 0.7rem; font-size: 0.9rem; color: var(--ink-3); }
     .hero figure { margin-top: clamp(2.5rem, 6vw, 4rem); }
 
@@ -128,7 +131,7 @@
         <a class="btn" href="#start">Try the demo in a minute</a>
       </div>
       <figure>
-        <div class="frame">
+        <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
           <picture>
             <source srcset="img/hero-dark.webp" media="(prefers-color-scheme: dark)" />
             <img src="img/hero-light.webp" width="1088" height="569" alt="The PGM Lens overview for a demo program: the verdict 'Off track', then a forecast timeline for three milestones, each with a bar from the most likely finish to the date we are 80% sure of, a due-date flag and a plain verdict such as 'Likely to slip about 2 weeks'." />
@@ -149,7 +152,7 @@
             <p>PGM Lens runs thousands of simulations on your team's recent pace and scope growth. You see a likely date, a date you can be 80% sure of, and the chance of hitting the deadline. A status is always a word and a shape, never just a colour.</p>
           </div>
           <figure>
-            <div class="frame">
+            <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
               <picture>
                 <source srcset="img/numbers-dark.webp" media="(prefers-color-scheme: dark)" />
                 <img src="img/numbers-light.webp" loading="lazy" width="1072" height="488" alt="The same timeline with the numbers behind each forecast switched on: the chance of finishing on time and the dates at 50%, 80% and 95% confidence." />
@@ -164,7 +167,7 @@
             <p>Declarative rules flag stale blockers, scope creep, overloaded owners, critical work nobody owns and long dependency chains. Each finding says what is wrong, why it matters and what to do next.</p>
           </div>
           <figure>
-            <div class="frame">
+            <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
               <picture>
                 <source srcset="img/attention-dark.webp" media="(prefers-color-scheme: dark)" />
                 <img src="img/attention-light.webp" loading="lazy" width="1072" height="420" alt="A list of risks, each with a severity, a title, a one-sentence explanation and the issue keys involved." />
@@ -179,7 +182,7 @@
             <p>A dependency map built from your real blocking links, with the critical path outlined. It surfaces the single issue at the root of a chain, so you fix that one first.</p>
           </div>
           <figure>
-            <div class="frame">
+            <div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>localhost:8000</span></div>
               <picture>
                 <source srcset="img/deps-dark.webp" media="(prefers-color-scheme: dark)" />
                 <img src="img/deps-light.webp" loading="lazy" width="1070" height="250" alt="A dependency map of issues connected by blocking links, with the critical path outlined." />
