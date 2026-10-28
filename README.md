@@ -52,6 +52,18 @@ Or with Docker: `docker compose up` → http://localhost:8080
 | `apps/web` | React dashboard |
 | `rules/` | Examples of custom risk rules (YAML) |
 
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Language and tooling | Python 3.12+, [uv](https://docs.astral.sh/uv/) workspace monorepo, Ruff, pytest |
+| Core engine | Pydantic (data model), NetworkX (dependency graph), NumPy (Monte Carlo forecasting), PyYAML (risk rules) |
+| Connectors | httpx; Jira, GitLab and GitHub, loaded as plugins through entry points |
+| API | FastAPI, Uvicorn, OpenTelemetry |
+| Dashboard | React 19, TypeScript, Vite, `@xyflow/react` (dependency graph), Vitest |
+| Delivery | Docker and `docker compose`, GitHub Actions (CI and site deploy), Dependabot |
+| Website | Static HTML and CSS on GitHub Pages, with self-hosted fonts and no tracking |
+
 ## Design principles
 
 - **Answers first.** Every screen opens with a plain-language verdict.
