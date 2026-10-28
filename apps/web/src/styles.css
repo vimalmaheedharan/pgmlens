@@ -110,7 +110,11 @@ input[type="search"] { min-width: 18rem; }
 /* ---- shell ---- */
 .topbar { display: flex; align-items: center; gap: 1.25rem; padding: 0.7rem 1.5rem; border-bottom: 1px solid var(--rule); }
 .brand { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--ink); text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; }
-.lens { color: var(--calm); }
+.lens-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  .lens-light { display: none; }
+  .lens-dark { display: inline; }
+}
 .page { max-width: 70rem; margin: 0 auto; padding: 1.75rem 1.5rem 5rem; }
 .page.narrow { max-width: 42rem; }
 .page-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
